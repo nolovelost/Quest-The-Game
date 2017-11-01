@@ -137,7 +137,6 @@
      <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
      <None Include="Assets\Scripts\PDollar\Resources\GestureSet\Spells\combo-131535310486942891.xml" />
      <None Include="Assets\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
-     <None Include="Assets\Shaders\SciFiGlowAdditive.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
      <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformCompute.compute" />
      <None Include="Assets\Scripts\Shaders\SciFiGlowAdditive.shader" />

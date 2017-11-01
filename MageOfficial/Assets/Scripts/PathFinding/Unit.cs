@@ -13,6 +13,8 @@ public class Unit : MonoBehaviour
     Vector3 clickTarget = Vector3.zero;
     int clickDebug = 0;
      public Camera cam;
+    //used in drawPanel to stop movement
+    public bool canMove = true;
  //   CameraFloow offsetPass;
 
     public void OnDrawGizmos()
@@ -22,7 +24,7 @@ public class Unit : MonoBehaviour
             for (int i = targetIndex; i < path.Length; i++)
             {
                 Gizmos.color = Color.green;
-                Gizmos.DrawCube(path[i], Vector3.one);
+                Gizmos.DrawCube(path[i], Vector3.one* 0.05f);
 
                 //waypoints
                 if (i == targetIndex)
@@ -79,7 +81,7 @@ public class Unit : MonoBehaviour
     void Update()
     {
        
-             if (Input.GetMouseButtonUp(0))
+             if (Input.GetMouseButtonUp(0) && canMove)
                     {
             clickDebug++;
                         clickTarget = Camera.main.ScreenToWorldPoint(Input.mousePosition);

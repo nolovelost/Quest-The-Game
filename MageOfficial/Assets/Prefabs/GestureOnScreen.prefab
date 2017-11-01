@@ -66,33 +66,33 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 1
+    widthMultiplier: 0.5
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 0.117761254
+        value: 0.10599673
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
-        time: 0.19451092
-        value: 0.25460747
+        time: 0.19051312
+        value: 0.15460137
         inSlope: -0.410825
         outSlope: -0.410825
         tangentMode: 0
       - serializedVersion: 2
-        time: 0.6189619
-        value: 0.41570258
+        time: 0.6229597
+        value: 0.18629432
         inSlope: 0.40955842
         outSlope: 0.40955842
         tangentMode: 0
       - serializedVersion: 2
-        time: 0.9959717
-        value: 0.111833215
-        inSlope: 1.493798
-        outSlope: 1.493798
+        time: 1
+        value: 0.052995324
+        inSlope: 0.43629277
+        outSlope: 0.43629277
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2

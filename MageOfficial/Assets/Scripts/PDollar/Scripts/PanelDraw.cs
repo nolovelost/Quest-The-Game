@@ -9,9 +9,11 @@ using PDollarGestureRecognizer;
 public class PanelDraw : MonoBehaviour
 {
     //test
-   // public GameObject boom;
-   // public GameObject whush;
-
+    // public GameObject boom;
+    // public GameObject whush;
+    public AudioSource drawSound;
+    //player so that we can stop movement
+    public GameObject player;
     //The Panel that we will draw on
     public RectTransform UIPanel;
     public Canvas canvas;
@@ -98,10 +100,13 @@ public class PanelDraw : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
+               
+                
+
 
                 if (recognized)
                 {
-
+                    drawSound.Stop();
                     recognized = false;
                     strokeId = -1;
 
@@ -129,12 +134,21 @@ public class PanelDraw : MonoBehaviour
 
             if (Input.GetMouseButton(0))
             {
+                if (!drawSound.isPlaying)
+                {
+                    drawSound.Play();
+                }
                 points.Add(new Point(virtualKeyPosition.x, -virtualKeyPosition.y, strokeId));
                 //particle
-                magic.transform.SetPositionAndRotation((Camera.main.ScreenToWorldPoint(new Vector3(virtualKeyPosition.x, virtualKeyPosition.y, 10))),Quaternion.identity);
+                magic.transform.SetPositionAndRotation((Camera.main.ScreenToWorldPoint(new Vector3(virtualKeyPosition.x, virtualKeyPosition.y, 10))), Quaternion.identity);
 
                 currentGestureLineRenderer.SetVertexCount(++vertexCount);
                 currentGestureLineRenderer.SetPosition(vertexCount - 1, Camera.main.ScreenToWorldPoint(new Vector3(virtualKeyPosition.x, virtualKeyPosition.y, 10)));
+            }
+            //audio else
+            else {
+                drawSound.Stop();
+
             }
         }
     }
@@ -198,7 +212,8 @@ public class PanelDraw : MonoBehaviour
         boom.SetActive(false);
     }*/
     public void StartDrawing()
-    {
+    {   //stop player mmovement
+        player.GetComponent<Unit>().canMove = false;
         // activate ane set up the draw area
         UIPanel.gameObject.SetActive(true);
          drawArea = new Rect(UIPanel.rect.xMin, UIPanel.rect.yMax, UIPanel.rect.width  * canvas.scaleFactor, UIPanel.rect.height * canvas.scaleFactor);
@@ -208,6 +223,8 @@ public class PanelDraw : MonoBehaviour
 
     public void StopDrawing()
     {
+        //start player mmovement
+        player.GetComponent<Unit>().canMove = true;
         //disable the draw area
         UIPanel.gameObject.SetActive(false);
         drawArea.size = new Vector2(0, 0);

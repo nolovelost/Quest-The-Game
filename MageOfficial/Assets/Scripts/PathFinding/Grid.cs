@@ -43,7 +43,7 @@ public class Grid : MonoBehaviour {
                         Gizmos.color = Color.black;
                     }
                 }
-                Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - 0.1f));
+                Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - 0.01f));
             }
            
         }
