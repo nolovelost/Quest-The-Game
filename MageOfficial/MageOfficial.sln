@@ -1,14 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MageOfficial", "Assembly-CSharp.csproj", "{6AAF81EA-C6FC-FCF5-6617-44797E16552E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MageOfficial", "Assembly-CSharp-Editor.csproj", "{47FC3893-9662-5570-F916-1D4084F1CCDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-
+		{6AAF81EA-C6FC-FCF5-6617-44797E16552E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AAF81EA-C6FC-FCF5-6617-44797E16552E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AAF81EA-C6FC-FCF5-6617-44797E16552E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AAF81EA-C6FC-FCF5-6617-44797E16552E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47FC3893-9662-5570-F916-1D4084F1CCDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47FC3893-9662-5570-F916-1D4084F1CCDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47FC3893-9662-5570-F916-1D4084F1CCDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47FC3893-9662-5570-F916-1D4084F1CCDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
