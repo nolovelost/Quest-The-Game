@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/ImportsTest.unity
+- path: Assets/Scenes/ArtTest.unity
   isLoaded: 1
   isActive: 1

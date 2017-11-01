@@ -88,6 +88,12 @@ public class PathFinding : MonoBehaviour {
                         {
                             openSet.Add(neighbour);
                         }
+                        //else update it
+                        /*
+                        else
+                        {
+                            openSet.UpdateItem(neighbour);
+                        }*/
                     }
                 }
 
