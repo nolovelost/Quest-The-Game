@@ -231,6 +231,8 @@ public class PanelDraw : MonoBehaviour
         {
             whush.GetComponent<PlayerBolt>().lockedTarget = hit.collider.gameObject;
             Debug.Log("Target Position: " + hit.collider.gameObject.transform.position);
+            releaseSound.Play();
+
             Instantiate(whush, player.transform.position, Quaternion.identity);
         }
         else

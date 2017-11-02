@@ -8,6 +8,7 @@ public class PlayerBolt : MonoBehaviour {
     private Vector3 HomingDirection;
     private bool isTargetAcquired;
 
+    bool targetReached = false;
     public float speed = 1.0f;
 
     void Awake()
@@ -29,7 +30,7 @@ public class PlayerBolt : MonoBehaviour {
             AcquireTarget();
             TurnToTarget();
             MoveToTarget();
-            if (TargetIsReached())
+            if (targetReached)
             {
                 //Play Animation ??
                 DestroyObject(this.gameObject);
@@ -53,7 +54,13 @@ public class PlayerBolt : MonoBehaviour {
             HomingDirection = lockedTarget.GetComponent<Transform>().position - transform.position;
         }
     }
-
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag =="Enemy")
+        {
+            targetReached = true;
+        }
+    }
     #region Homing missile code reuse
     void TurnToTarget()
     {
@@ -77,11 +84,14 @@ public class PlayerBolt : MonoBehaviour {
         RocketRigidBody.MovePosition(transform.position + HomingDirection);
     }
 
+
     bool TargetIsReached()
     {
-        if ((int)transform.position.x == (int)lockedTarget.transform.position.x && (int)transform.position.y == (int)lockedTarget.transform.position.y)
+        if ((transform.position.x) -(lockedTarget.transform.position.x) <= 0.01f   && (transform.position.y) - (lockedTarget.transform.position.y) <= 0.01f)
         {
+            Debug.Log("myposition" + transform.position.x + "target: " + lockedTarget.transform.position.x);
             return true;
+
         }
         else
         {
