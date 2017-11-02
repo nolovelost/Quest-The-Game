@@ -9,9 +9,11 @@ using PDollarGestureRecognizer;
 public class PanelDraw : MonoBehaviour
 {
     //test
-    // public GameObject boom;
-    // public GameObject whush;
+     public GameObject boom;
+     public GameObject whush;
+    //audio
     public AudioSource drawSound;
+    public AudioSource releaseSound;
     //player so that we can stop movement
     public GameObject player;
     //The Panel that we will draw on
@@ -20,7 +22,8 @@ public class PanelDraw : MonoBehaviour
 
     //Particles
     public ParticleSystem magic;
-   
+    //to only check stuff on enemy layer
+    public LayerMask enemyRaycast;
 
     public Transform gestureOnScreenPrefab;
 
@@ -107,6 +110,7 @@ public class PanelDraw : MonoBehaviour
                 if (recognized)
                 {
                     drawSound.Stop();
+                   
                     recognized = false;
                     strokeId = -1;
 
@@ -158,59 +162,103 @@ public class PanelDraw : MonoBehaviour
         GUI.backgroundColor = Color.red;
         GUI.Box(drawArea, "Draw Area");
     }
-    
-#region MyFunctions
+
+    #region MyFunctions
     public void Recoginze()
     {
         recognized = true;
-
+        //releaseSound.Play();
         Gesture beingTested = new Gesture(points.ToArray());
         Result result = PointCloudRecognizer.Classify(beingTested, savedGestures.ToArray());
-         print("name: " + result.GestureClass + " score: " + result.Score);
-      /*  if (result.Score >= 0.7f )
-        {
-           
-        }
-        else
-        {
-            print("WRONG");
-        }*/
-        }
+        print("name: " + result.GestureClass + " score: " + result.Score);
+        /*  if (result.Score >= 0.7f )
+          {
+
+          }
+          else
+          {
+              print("WRONG");
+          }*/
+
+
         ///////////////TEST
-        /*
-        if (result.GestureClass == "glyph")
+
+        if (result.GestureClass.Substring(0,3) == "aoe")
         {
             print("BOOM");
-        GameObject  tempBoom =  Instantiate(boom,transform,true);
-            Destroy(tempBoom, 1.25f);
-          
+            StartCoroutine("AoE");
+            
+
+            // GameObject tempBoom = Instantiate(boom, transform, true);
+            //   Destroy(tempBoom, 1.25f);
+
         }
-        else if (result.GestureClass == "NewLine")
+        
+        else if (result.GestureClass.Substring(0,4) == "bolt")
         {
-            GameObject tempWhush = Instantiate(whush, transform, true);
-            Destroy(tempWhush, 1.0f);
-           
-           
+            print("whush");
+            StartCoroutine("Bolt");
+   
         }
-        */
-       
+
+    }
 
 
         //  return result;
         /*
     }
-    IEnumerator DisableW()
+    */
+    IEnumerator Bolt()
     {
-       
-        yield return new WaitForSeconds(1.0f);
-        whush.SetActive(false);
-    }
-    IEnumerator DisableB()
-    {
+        do
+        {
+            Debug.Log("waiting for bolt");
+            yield return null;
+        } while (!Input.GetMouseButtonDown(0));
+        /*
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = 10;
+        */
+        Vector3 targetPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y,0);
+        targetPos = Camera.main.ScreenToWorldPoint(targetPos);
+        targetPos.z = 0;
+        Vector3 screenPos = Camera.main.ScreenToWorldPoint(targetPos);
 
-        yield return new WaitForSeconds(1.25f);
-        boom.SetActive(false);
-    }*/
+        //RaycastHit2D hit = Physics2D.Raycast(Camera.main.transform.position, screenPos - Camera.main.transform.position, 20,enemyRaycast);
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,float.MaxValue,enemyRaycast);
+
+        if (hit.collider != null)
+        {
+            whush.GetComponent<PlayerBolt>().lockedTarget = hit.collider.gameObject;
+            Debug.Log("Target Position: " + hit.collider.gameObject.transform.position);
+            Instantiate(whush, player.transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Debug.Log("You fucked up,please try again");
+        }
+        
+
+    }
+    IEnumerator AoE()
+    {//wait for click
+        do
+        {
+            Debug.Log("waiting for aoe");
+            yield return null;
+        } while (!Input.GetMouseButtonDown(0));
+        Debug.Log("takinn clcik position");
+        releaseSound.Play();
+        //get the position for spawning te spell
+        Vector3 targetPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
+        targetPos = Camera.main.ScreenToWorldPoint(targetPos);
+        targetPos.z = 0;
+        Vector3 screenPos = Camera.main.ScreenToWorldPoint(targetPos);
+        //instatntiate the spell
+        Instantiate(boom, targetPos, Quaternion.identity);
+        
+        
+    }
     public void StartDrawing()
     {   //stop player mmovement
         player.GetComponent<Unit>().canMove = false;

@@ -97,6 +97,9 @@
      <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
      <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
      <Compile Include="Assets\Scripts\CameraFloow.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\Inventory.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\Scroll.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\ScrollDatabase.cs" />
      <Compile Include="Assets\Scripts\PathFinding\Grid.cs" />
      <Compile Include="Assets\Scripts\PathFinding\Node.cs" />
      <Compile Include="Assets\Scripts\PathFinding\PathFinding.cs" />
@@ -111,6 +114,10 @@
      <Compile Include="Assets\Scripts\PDollar\Scripts\PDollarGestureRecognizer\PointCloudRecognizer.cs" />
      <Compile Include="Assets\Scripts\PDollar\Scripts\PDollarGestureRecognizer\Result.cs" />
      <Compile Include="Assets\Scripts\Rendering\Sort.cs" />
+     <Compile Include="Assets\Scripts\SpellSystem\ArbitraryMove.cs" />
+     <Compile Include="Assets\Scripts\SpellSystem\HomingMissile.cs" />
+     <Compile Include="Assets\Scripts\SpellSystem\PlayerBolt.cs" />
+     <Compile Include="Assets\Scripts\SpellSystem\Rocket.cs" />
      <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
      <None Include="Assets\PostProcessing\Resources\Shaders\Fog.shader" />
