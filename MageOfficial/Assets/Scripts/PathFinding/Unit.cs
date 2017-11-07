@@ -15,7 +15,9 @@ public class Unit : MonoBehaviour
      public Camera cam;
     //used in drawPanel to stop movement
     public bool canMove = true;
- //   CameraFloow offsetPass;
+    //   CameraFloow offsetPass;
+    //testing smoothing
+    Catmul smoothing;
 
     public void OnDrawGizmos()
     {
@@ -41,7 +43,8 @@ public class Unit : MonoBehaviour
     void Start()
     {
         //  PathRequester.RequestPath(this.transform.position, target.position, OnPathFound);
-      //  offsetPass = cam.GetComponent<CameraFloow>();
+        //  offsetPass = cam.GetComponent<CameraFloow>();
+        smoothing = this.transform.GetComponent<Catmul>();
     }
     public void OnPathFound(Vector3[] newPath, bool successful)
     {
@@ -49,6 +52,7 @@ public class Unit : MonoBehaviour
         {
             path = newPath;
             //in case its running
+          //  path = smoothing.CatmulRomCalculate(new Vector2(path[0].x,path[0].y),new Vector2(path[path.Length-1].x, path[path.Length-1].y));
             StopCoroutine("FollowPath");
             StartCoroutine("FollowPath");
         }
@@ -90,13 +94,13 @@ public class Unit : MonoBehaviour
             clickTarget.z = transform.position.z;
                         if (clickTarget.x < this.transform.position.x)
                         {
-                            this.transform.GetComponent<SpriteRenderer>().flipX = true;
+                            this.transform.GetComponent<SpriteRenderer>().flipX = false;
                 //move the camera depending on direction going
               //  offsetPass.offset.x = -5;
                         }
                         else
                         {
-                            this.transform.GetComponent<SpriteRenderer>().flipX = false;
+                            this.transform.GetComponent<SpriteRenderer>().flipX = true;
               //  offsetPass.offset.x = 5;
 
             }
