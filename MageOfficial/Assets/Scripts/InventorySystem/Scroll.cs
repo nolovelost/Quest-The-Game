@@ -23,6 +23,7 @@ public class Scroll
     public  Element      MagicElement;
     public  float        CastPower;
     public  float        CastDelay;
+    public  int          TotalAmount;
 
 
     public Scroll() { }
@@ -33,7 +34,8 @@ public class Scroll
             string  description,
             Element magicElement,
             float   castPower,
-            float   castDelay)
+            float   castDelay,
+            int     totalAmount = 1)
     {
         // Basic spell information
         ScrollName      =   scrollName;
@@ -50,6 +52,7 @@ public class Scroll
         MagicElement    =   magicElement;
         CastPower       =   castPower;
         CastDelay       =   castDelay;
+        TotalAmount     =   totalAmount;
     }
         
 }
