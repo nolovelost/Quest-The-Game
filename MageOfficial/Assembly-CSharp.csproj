@@ -114,6 +114,8 @@
      <Compile Include="Assets\Scripts\PDollar\Scripts\PDollarGestureRecognizer\Point.cs" />
      <Compile Include="Assets\Scripts\PDollar\Scripts\PDollarGestureRecognizer\PointCloudRecognizer.cs" />
      <Compile Include="Assets\Scripts\PDollar\Scripts\PDollarGestureRecognizer\Result.cs" />
+     <Compile Include="Assets\Scripts\PlayerStatus\PlayerHealth.cs" />
+     <Compile Include="Assets\Scripts\PlayerStatus\SelfInflictDamage_test.cs" />
      <Compile Include="Assets\Scripts\Rendering\Sort.cs" />
      <Compile Include="Assets\Scripts\SpellSystem\ArbitraryMove.cs" />
      <Compile Include="Assets\Scripts\SpellSystem\HomingMissile.cs" />
