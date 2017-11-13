@@ -56,7 +56,7 @@ public class PlayerBolt : MonoBehaviour {
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag =="Enemy")
+        if ( other.tag =="Enemy")
         {
             targetReached = true;
         }
@@ -87,9 +87,10 @@ public class PlayerBolt : MonoBehaviour {
 
     bool TargetIsReached()
     {
-        if ((transform.position.x) -(lockedTarget.transform.position.x) <= 0.01f   && (transform.position.y) - (lockedTarget.transform.position.y) <= 0.01f)
+        if ((transform.position.x) -(lockedTarget.transform.position.x) <= 0.1f   && (transform.position.y) - (lockedTarget.transform.position.y) <= 0.1f)
         {
             Debug.Log("myposition" + transform.position.x + "target: " + lockedTarget.transform.position.x);
+            targetReached = true;
             return true;
 
         }

@@ -12,6 +12,7 @@ public class Enemy_movement : MonoBehaviour
     int targetIndex;
     //Vector3 clickTarget = Vector3.zero;
     int clickDebug = 0;
+    public float lag = 0.5f;
 
     public static bool recalculate = false;
     
@@ -19,8 +20,7 @@ public class Enemy_movement : MonoBehaviour
     //animation setup
     bool isMoving = false;
     Animator playerAnim;
-    //used by panle draw when the panel is Up
-   public  bool isCasting = false;
+    bool canAttack = false;
     //   CameraFloow offsetPass;
     //testing smoothing
     Catmul smoothing;
@@ -92,8 +92,9 @@ public class Enemy_movement : MonoBehaviour
         
     }
 
-    void Chase()
+    IEnumerator  Chase()
     {
+        Debug.Log("start chase");
         Vector3 offsetTarget = target.transform.GetComponent<Unit>().clickTarget;
         //add offset so that it stops near not on the player
         if (offsetTarget.x < this.transform.position.x)
@@ -104,16 +105,28 @@ public class Enemy_movement : MonoBehaviour
         {
             offsetTarget.x -= .2f;
         }
-    PathRequester.RequestPath(this.transform.position, offsetTarget, OnPathFound);
+        yield return new WaitForSeconds(lag);
+        PathRequester.RequestPath(this.transform.position, offsetTarget, OnPathFound);
+       yield return null;
         recalculate = false;
     }
 
     void Update()
     {
+        //check attack distance
+        Debug.Log("distance: " + Mathf.Abs(this.transform.position.x - target.transform.position.x));
+        if (Mathf.Abs(this.transform.position.x - target.transform.position.x) <= 0.25f)
+        {
+            canAttack = true;
+        }
+        else
+        {
+            canAttack = false;
+        }
 
         //animation here 
         playerAnim.SetBool("isMoving", isMoving);
-        playerAnim.SetBool("isCasting", isCasting);
+        playerAnim.SetBool("canAttack", canAttack);
            
                        
             
@@ -134,7 +147,7 @@ public class Enemy_movement : MonoBehaviour
 
         if (recalculate )
         {
-            Chase();
+            StartCoroutine("Chase");
         }
                     
         Debug.Log(clickDebug);
