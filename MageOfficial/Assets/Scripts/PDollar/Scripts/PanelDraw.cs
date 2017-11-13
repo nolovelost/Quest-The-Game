@@ -260,10 +260,15 @@ public class PanelDraw : MonoBehaviour
         Instantiate(boom, targetPos, Quaternion.identity);
         
         
+        
     }
     public void StartDrawing()
     {   //stop player mmovement
         player.GetComponent<Unit>().canMove = false;
+        //start the casting animation
+        player.GetComponent<Unit>().isCasting = true;
+
+       
         // activate ane set up the draw area
         UIPanel.gameObject.SetActive(true);
          drawArea = new Rect(UIPanel.rect.xMin, UIPanel.rect.yMax, UIPanel.rect.width  * canvas.scaleFactor, UIPanel.rect.height * canvas.scaleFactor);
@@ -275,6 +280,8 @@ public class PanelDraw : MonoBehaviour
     {
         //start player mmovement
         player.GetComponent<Unit>().canMove = true;
+        //stop the casting animation
+        player.GetComponent<Unit>().isCasting = false;
         //disable the draw area
         UIPanel.gameObject.SetActive(false);
         drawArea.size = new Vector2(0, 0);

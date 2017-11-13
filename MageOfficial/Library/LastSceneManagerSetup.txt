@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/ImportsTest.unity
+- path: Assets/Scenes/Game Levels/Underground_3.unity
   isLoaded: 1
   isActive: 1
