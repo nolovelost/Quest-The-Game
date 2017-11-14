@@ -5,12 +5,12 @@ using UnityEngine;
 public class SelfInflictDamage_test : MonoBehaviour
 {
 
-    PlayerHealth playerHealth;
+    RadialPlayerHealth playerHealth;
 
 	// Use this for initialization
 	void Start ()
     {
-        playerHealth = GetComponent<PlayerHealth>();
+        playerHealth = GetComponent<RadialPlayerHealth>();
     }
 	
 	// Update is called once per frame

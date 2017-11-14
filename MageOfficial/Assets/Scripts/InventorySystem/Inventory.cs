@@ -21,9 +21,20 @@ public class Inventory : MonoBehaviour
     private Scroll          DraggedItem;
     private int             PrevDraggedItemIndex;
 
+    private bool[] IsSlotDragged = new bool[3];
+    private bool[] IsSlotOpened = new bool[3];
+    float SlotLerpedPosition;
 
-	// Use this for initialization
-	void Start ()
+    float startVal = Screen.height; // Initial value from which to start
+    float toVal = Screen.height - 68; // Value to reach.
+    // starting value for the Lerp
+    float t = 0.0f;
+
+    public bool HasUsedItem = false;
+
+
+    // Use this for initialization
+    void Start ()
     {
         for (int i = 0; i < (SlotX * SlotY); i++)
         {
@@ -41,6 +52,8 @@ public class Inventory : MonoBehaviour
         AddScroll(2);
 
         Count = mInventory.Count;
+
+        float SlotLerpedPosition = startVal;
     }
 	
 	// Update is called once per frame
@@ -83,45 +96,114 @@ public class Inventory : MonoBehaviour
             for (int x = 0; x < SlotX; x++)
             {
                 Rect SlotBox = new Rect((Screen.width/2 - 128) + (x*128), Screen.height - 68, 64, 64);
+                Rect SlotPuller = new Rect((Screen.width/2 - 128 + 26) + (x * 128), Screen.height - 80, 12, 12);
+                
+                if (IsSlotDragged[i] == true)
+                {
+                    float SlotLerpedPosition = Mathf.Lerp(startVal, toVal, t);
+
+                    if (SlotLerpedPosition > toVal)
+                    {
+                        Vector3 YPosition = new Vector3();
+                        YPosition.y = Mathf.Clamp(Input.mousePosition.y, Screen.height - 68, Screen.height);
+
+                        Rect SlotBoxes = new Rect(
+                            (Screen.width / 2 - 128) + (x * 128),
+                            SlotLerpedPosition,
+                            64,
+                            64);
+                        
+                        // .. and increate the t interpolater
+                        t += 4.0f * Time.deltaTime * Input.GetAxis("Mouse Y");
+
+                        GUI.Box(
+                            SlotBoxes,
+                            "",
+                            guiskin.GetStyle("GUI Slot"));
+
+                        //IsSlotOpened[i] = false;
+                    }
+
+                    if (SlotLerpedPosition <= toVal)
+                    {
+                        Rect SlotBoxes = new Rect(
+                            (Screen.width / 2 - 128) + (x * 128),
+                            toVal,
+                            64,
+                            64);
+                        GUI.Box(
+                            SlotBoxes,
+                            "",
+                            guiskin.GetStyle("GUI Slot"));
+                        IsSlotOpened[i] = true;
+                    }
+                }
+                
                 GUI.Box(
-                    SlotBox,
+                    SlotPuller,
                     "",
-                    guiskin.GetStyle("GUI Slot"));
+                    guiskin.GetStyle("GUI Slot Puller"));
 
                 Slots[i] = mInventory[i];   // Add all inventory items to the slot
 
-                // Swap item on Mouse Button Release logic
-                if (SlotBox.Contains(e.mousePosition) && e.type == EventType.MouseUp && IsDraggingItem)
+                // Check for Slot Drag
+                if (SlotPuller.Contains(e.mousePosition))
                 {
-                    mInventory[PrevDraggedItemIndex] = mInventory[i];
-                    mInventory[i] = DraggedItem;
-                    IsDraggingItem = false;
-                    DraggedItem = null;
-                }
-
-                // Check to see if the slot is occupied by an inventory icon
-                if (Slots[i].ScrollID != 0)
-                {
-                    GUI.DrawTexture(SlotBox, Slots[i].ScrollIcon);
-
-                    if (SlotBox.Contains(e.mousePosition))
+                    if (e.button == 0 && e.type == EventType.MouseDown)
                     {
-                        TooltipText = CreateTooltip(Slots[i]);
-                        ShowTooltip = true;
-
-                        // Dragging item on Mouse Drag logic
-                        if (e.button == 0 && e.type == EventType.MouseDrag && !IsDraggingItem)
+                        //print(x);
+                        if (IsSlotDragged[i] == false)
                         {
-                            IsDraggingItem = true;
-                            PrevDraggedItemIndex = i;
-                            DraggedItem = Slots[i];
-                            mInventory[i] = new Scroll();
-                            ShowTooltip = false;
+                            IsSlotDragged[i] = true;
+                        }
+                        else
+                        {
+                            for (int j = 0; j < SlotX; j++)
+                            {
+                                IsSlotDragged[j] = false;
+                                IsSlotOpened[j] = false;
+                            }                              
+                            t = 0.0f;
                         }
                     }
-                    else
-                        ShowTooltip = false;
                 }
+
+                if (IsSlotOpened[i] == true)
+                {
+                    // Swap item on Mouse Release logic
+                    if (SlotBox.Contains(e.mousePosition) && e.type == EventType.MouseUp && IsDraggingItem)
+                    {
+                        mInventory[PrevDraggedItemIndex] = mInventory[i];
+                        mInventory[i] = DraggedItem;
+                        IsDraggingItem = false;
+                        DraggedItem = null;
+                    }
+
+                    // Check to see if the slot is occupied by an inventory icon
+                    if (Slots[i].ScrollID != 0)
+                    {
+                        GUI.DrawTexture(SlotBox, Slots[i].ScrollIcon);
+
+                        if (SlotBox.Contains(e.mousePosition))
+                        {
+                            TooltipText = CreateTooltip(Slots[i]);
+                            ShowTooltip = true;
+
+                            // Dragging item on Mouse Drag logic
+                            if (e.button == 0 && e.type == EventType.MouseDrag && !IsDraggingItem)
+                            {
+                                IsDraggingItem = true;
+                                PrevDraggedItemIndex = i;
+                                DraggedItem = Slots[i];
+                                mInventory[i] = new Scroll();
+                                ShowTooltip = false;
+                            }
+                        }
+                        else
+                            ShowTooltip = false;
+                    }
+                }
+
                 i++;
             }
         }
