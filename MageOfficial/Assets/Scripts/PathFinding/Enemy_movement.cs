@@ -7,6 +7,8 @@ public class Enemy_movement : MonoBehaviour
 {
    
     public Transform target;
+    public float attackRange = 0.25f;
+    public float positionOffset = .2f;
     public float speed = 10;
     Vector3[] path;
     int targetIndex;
@@ -57,6 +59,7 @@ public class Enemy_movement : MonoBehaviour
     {
         if (successful)
         {
+            isMoving = true;
             path = newPath;
             StopCoroutine("FollowPath");
             StartCoroutine("FollowPath");
@@ -64,7 +67,7 @@ public class Enemy_movement : MonoBehaviour
     }
     IEnumerator FollowPath()
     {//start at the beginning
-        isMoving = true;
+       // isMoving = true;
         Vector3 currentWaypoint = path[0];
 
         //reset so can be reused ?
@@ -99,11 +102,14 @@ public class Enemy_movement : MonoBehaviour
         //add offset so that it stops near not on the player
         if (offsetTarget.x < this.transform.position.x)
         {
-            offsetTarget.x += .2f;
+            offsetTarget.x += positionOffset;
+            //vary the y a bit 
+            offsetTarget.y += Random.Range(-0.1f, 0.1f);
         }
         else
         {
-            offsetTarget.x -= .2f;
+            offsetTarget.x -= positionOffset;
+            offsetTarget.y += Random.Range(-0.1f, 0.1f);
         }
         yield return new WaitForSeconds(lag);
         PathRequester.RequestPath(this.transform.position, offsetTarget, OnPathFound);
@@ -115,7 +121,7 @@ public class Enemy_movement : MonoBehaviour
     {
         //check attack distance
         Debug.Log("distance: " + Mathf.Abs(this.transform.position.x - target.transform.position.x));
-        if (Mathf.Abs(this.transform.position.x - target.transform.position.x) <= 0.25f)
+        if (Mathf.Abs(this.transform.position.x - target.transform.position.x) <= attackRange)
         {
             canAttack = true;
         }
@@ -126,7 +132,11 @@ public class Enemy_movement : MonoBehaviour
 
         //animation here 
         playerAnim.SetBool("isMoving", isMoving);
-        playerAnim.SetBool("canAttack", canAttack);
+        if (canAttack)
+        {
+        playerAnim.SetTrigger("Attack");
+        }
+        
            
                        
             

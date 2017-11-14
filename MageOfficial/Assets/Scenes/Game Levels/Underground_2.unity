@@ -5476,7 +5476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1713876269}
   speed: 1
-  isCasting: 0
+  lag: 0.5
 --- !u!95 &1887191517
 Animator:
   serializedVersion: 3
@@ -5908,6 +5908,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1713876269}
   smooth: 0.125
-  offset: {x: 0, y: 0.3, z: -10}
+  offset: {x: -1, y: 0.3, z: -10}
   boundLeft: 0
   boundRight: 0
