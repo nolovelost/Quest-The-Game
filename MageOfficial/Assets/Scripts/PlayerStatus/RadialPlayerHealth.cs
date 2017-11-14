@@ -15,7 +15,7 @@ public class RadialPlayerHealth : MonoBehaviour
     bool IsTakingDamage = false;
     bool HasTakenDamage = true;
 
-
+    public GameObject player;
 
     void Awake()
     {

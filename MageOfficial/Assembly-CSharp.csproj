@@ -99,6 +99,7 @@
      <Compile Include="Assets\Scripts\CameraFloow.cs" />
      <Compile Include="Assets\Scripts\Catmul.cs" />
      <Compile Include="Assets\Scripts\Enemies\ElementalAttack.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
      <Compile Include="Assets\Scripts\InventorySystem\Inventory.cs" />
      <Compile Include="Assets\Scripts\InventorySystem\Scroll.cs" />
      <Compile Include="Assets\Scripts\InventorySystem\ScrollDatabase.cs" />
@@ -116,7 +117,10 @@
      <Compile Include="Assets\Scripts\PDollar\Scripts\PDollarGestureRecognizer\Point.cs" />
      <Compile Include="Assets\Scripts\PDollar\Scripts\PDollarGestureRecognizer\PointCloudRecognizer.cs" />
      <Compile Include="Assets\Scripts\PDollar\Scripts\PDollarGestureRecognizer\Result.cs" />
+     <Compile Include="Assets\Scripts\PlayerStatus\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerStatus\PlayerHealth.cs" />
+     <Compile Include="Assets\Scripts\PlayerStatus\RadialPlayerHealth.cs" />
+     <Compile Include="Assets\Scripts\PlayerStatus\RadialSliderUI\Scripts\RadialSlider.cs" />
      <Compile Include="Assets\Scripts\PlayerStatus\SelfInflictDamage_test.cs" />
      <Compile Include="Assets\Scripts\Rendering\Sort.cs" />
      <Compile Include="Assets\Scripts\SceneManagement\FallToHallway.cs" />

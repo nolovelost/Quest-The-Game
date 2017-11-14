@@ -16,10 +16,10 @@ public class SelfInflictDamage_test : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		if (Input.GetButtonDown("ToggleInventory"))
-        {
-            print("Damaged!!");
-            playerHealth.TakeDamage(10);
-        }
+	//	if (Input.GetButtonDown("ToggleInventory"))
+      //  {
+          //  print("Damaged!!");
+           // playerHealth.TakeDamage(10);
+       // }
 	}
 }

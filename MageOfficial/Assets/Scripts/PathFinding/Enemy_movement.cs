@@ -7,6 +7,7 @@ public class Enemy_movement : MonoBehaviour
 {
    
     public Transform target;
+    public int meleeDmg = 10;
     public float attackRange = 0.25f;
     public float positionOffset = .2f;
     public float speed = 10;
@@ -15,6 +16,7 @@ public class Enemy_movement : MonoBehaviour
     //Vector3 clickTarget = Vector3.zero;
     int clickDebug = 0;
     public float lag = 0.5f;
+    public float attackLag = 0.667f;
 
     public static bool recalculate = false;
     
@@ -23,9 +25,7 @@ public class Enemy_movement : MonoBehaviour
     bool isMoving = false;
     Animator playerAnim;
     bool canAttack = false;
-    //   CameraFloow offsetPass;
-    //testing smoothing
-    Catmul smoothing;
+    bool attacked = false;
 
     public void OnDrawGizmos()
     {
@@ -116,7 +116,16 @@ public class Enemy_movement : MonoBehaviour
        yield return null;
         recalculate = false;
     }
+    
+    void Melee()
+    {
 
+        target.transform.GetComponent<Player>().health.TakeDamage(meleeDmg);
+   /*     if (!attacked)
+        {
+            StartCoroutine("MeleeAttack");
+        }*/
+    }
     void Update()
     {
         //check attack distance
@@ -135,13 +144,10 @@ public class Enemy_movement : MonoBehaviour
         if (canAttack)
         {
         playerAnim.SetTrigger("Attack");
+        
+        
         }
         
-           
-                       
-            
-           
-
                         if (target.position.x < this.transform.position.x)
                         {
                             this.transform.GetComponent<SpriteRenderer>().flipX = false;

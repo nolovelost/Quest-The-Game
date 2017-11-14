@@ -42,8 +42,8 @@ public class Inventory : MonoBehaviour
             mInventory.Add(new Scroll());
         }
 
-        mScrollDatabase = GameObject.FindGameObjectWithTag("ScrollDB").GetComponent<ScrollDatabase>();
-
+      //  mScrollDatabase = GameObject.FindGameObjectWithTag("ScrollDB").GetComponent<ScrollDatabase>();
+      /*
         // test add/remove
         AddScroll(2);
         AddScroll(1);
@@ -52,18 +52,18 @@ public class Inventory : MonoBehaviour
         AddScroll(2);
 
         Count = mInventory.Count;
-
-        float SlotLerpedPosition = startVal;
+        */
+      //  float SlotLerpedPosition = startVal;
     }
 	
 	// Update is called once per frame
 	void Update ()
-    {
+    {/*
         if (Input.GetButtonDown("ToggleInventory"))
         {
             ToggleInventory = !ToggleInventory;
         }
-
+        */
         // Never show tooltip outside of inventory screen
         if (ToggleInventory == false)
             ShowTooltip = false;

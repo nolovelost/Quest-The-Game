@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyBolt : MonoBehaviour {
     public GameObject lockedTarget;
+    public int damage = 10;
     private Rigidbody2D RocketRigidBody;
     private Vector3 HomingDirection;
     private bool isTargetAcquired;
@@ -32,6 +33,8 @@ public class EnemyBolt : MonoBehaviour {
             MoveToTarget();
             if (targetReached)
             {
+                lockedTarget.transform.GetComponent<Player>().health.TakeDamage(damage);
+
                 //Play Animation ??
                 DestroyObject(this.gameObject);
             }
