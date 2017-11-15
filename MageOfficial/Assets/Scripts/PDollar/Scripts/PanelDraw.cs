@@ -70,13 +70,7 @@ public class PanelDraw : MonoBehaviour
         foreach (TextAsset gestureXml in gesturesXml)
             savedGestures.Add(GestureIO.ReadGestureFromXML(gestureXml.text));
 
-        //NOT USED HERE
-        /*
-        //Load user custom gestures
-        string[] filePaths = Directory.GetFiles(Application.persistentDataPath, "*.xml");
-        foreach (string filePath in filePaths)
-            trainingSet.Add(GestureIO.ReadGestureFromFile(filePath));
-            */
+        
     }
     
     void Update()
@@ -159,8 +153,8 @@ public class PanelDraw : MonoBehaviour
     
     void OnGUI()
     {
-        GUI.backgroundColor = Color.red;
-        GUI.Box(drawArea, "Draw Area");
+       // GUI.backgroundColor = Color.red;
+      //  GUI.Box(drawArea, "Draw Area");
     }
 
     #region MyFunctions

@@ -14,6 +14,7 @@ public class Enemy_movement : MonoBehaviour
     Vector3[] path;
     int targetIndex;
     //Vector3 clickTarget = Vector3.zero;
+    public AudioSource attackSound;
     int clickDebug = 0;
     public float lag = 0.5f;
     public float attackLag = 0.667f;
@@ -50,8 +51,9 @@ public class Enemy_movement : MonoBehaviour
     }
     void Start()
     {
-
-        PathRequester.RequestPath(this.transform.position, target.position, OnPathFound);
+        Vector3 firstOffsetPosition = target.position;
+        firstOffsetPosition.x -= positionOffset/2;
+        PathRequester.RequestPath(this.transform.position, firstOffsetPosition, OnPathFound);
         playerAnim = this.transform.GetComponent<Animator>();
      //   InvokeRepeating("Chase", 1, 2f);
     }
@@ -119,7 +121,7 @@ public class Enemy_movement : MonoBehaviour
     
     void Melee()
     {
-
+        attackSound.Play();
         target.transform.GetComponent<Player>().health.TakeDamage(meleeDmg);
    /*     if (!attacked)
         {
@@ -129,7 +131,7 @@ public class Enemy_movement : MonoBehaviour
     void Update()
     {
         //check attack distance
-        Debug.Log("distance: " + Mathf.Abs(this.transform.position.x - target.transform.position.x));
+      //  Debug.Log("distance: " + Mathf.Abs(this.transform.position.x - target.transform.position.x));
         if (Mathf.Abs(this.transform.position.x - target.transform.position.x) <= attackRange)
         {
             canAttack = true;
@@ -147,18 +149,14 @@ public class Enemy_movement : MonoBehaviour
         
         
         }
-        
                         if (target.position.x < this.transform.position.x)
                         {
                             this.transform.GetComponent<SpriteRenderer>().flipX = false;
-                //move the camera depending on direction going
-              //  offsetPass.offset.x = -5;
+              
                         }
                         else
                         {
                             this.transform.GetComponent<SpriteRenderer>().flipX = true;
-              //  offsetPass.offset.x = 5;
-
                         }
 
         if (recalculate )

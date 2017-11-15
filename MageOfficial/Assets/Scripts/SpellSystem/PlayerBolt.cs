@@ -7,6 +7,7 @@ public class PlayerBolt : MonoBehaviour {
     private Rigidbody2D RocketRigidBody;
     private Vector3 HomingDirection;
     private bool isTargetAcquired;
+    public int damage = 15;
 
     bool targetReached = false;
     public float speed = 1.0f;
@@ -33,6 +34,7 @@ public class PlayerBolt : MonoBehaviour {
             if (targetReached)
             {
                 //Play Animation ??
+                lockedTarget.transform.GetComponent<Enemy>().TakeDamage(damage);
                 DestroyObject(this.gameObject);
             }
         }

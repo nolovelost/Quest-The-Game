@@ -7,6 +7,7 @@ public class ElementalAttack : MonoBehaviour {
     public float fireRate = 0.5f;
     public GameObject target;
     public GameObject whush;
+    public AudioSource conjure;
 
     // Use this for initialization
     void Start () {
@@ -24,6 +25,7 @@ public class ElementalAttack : MonoBehaviour {
     void Fire()
     {
         whush.GetComponent<EnemyBolt>().lockedTarget = target;
+        conjure.Play();
         Instantiate(whush, this.transform.position, Quaternion.identity);
     }
     // Update is called once per frame
