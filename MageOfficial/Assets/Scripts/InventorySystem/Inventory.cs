@@ -42,8 +42,8 @@ public class Inventory : MonoBehaviour
             mInventory.Add(new Scroll());
         }
 
-      //  mScrollDatabase = GameObject.FindGameObjectWithTag("ScrollDB").GetComponent<ScrollDatabase>();
-      /*
+        mScrollDatabase = GameObject.FindGameObjectWithTag("ScrollDB").GetComponent<ScrollDatabase>();
+
         // test add/remove
         AddScroll(2);
         AddScroll(1);
@@ -52,18 +52,18 @@ public class Inventory : MonoBehaviour
         AddScroll(2);
 
         Count = mInventory.Count;
-        */
-      //  float SlotLerpedPosition = startVal;
+
+        float SlotLerpedPosition = startVal;
     }
 	
 	// Update is called once per frame
 	void Update ()
-    {/*
+    {
         if (Input.GetButtonDown("ToggleInventory"))
         {
             ToggleInventory = !ToggleInventory;
         }
-        */
+
         // Never show tooltip outside of inventory screen
         if (ToggleInventory == false)
             ShowTooltip = false;
@@ -95,8 +95,8 @@ public class Inventory : MonoBehaviour
         {
             for (int x = 0; x < SlotX; x++)
             {
-                Rect SlotBox = new Rect((Screen.width/2 - 128) + (x*128), Screen.height - 68, 64, 64);
-                Rect SlotPuller = new Rect((Screen.width/2 - 128 + 26) + (x * 128), Screen.height - 80, 12, 12);
+                Rect SlotBox = new Rect((Screen.width/2 - 128) + (x*164), Screen.height - 68, 64, 64);
+                Rect SlotPuller = new Rect((Screen.width/2 - 128 + 26) + (x * 164), Screen.height - 80, 124, 100);
                 
                 if (IsSlotDragged[i] == true)
                 {
@@ -104,11 +104,11 @@ public class Inventory : MonoBehaviour
 
                     if (SlotLerpedPosition > toVal)
                     {
-                        Vector3 YPosition = new Vector3();
-                        YPosition.y = Mathf.Clamp(Input.mousePosition.y, Screen.height - 68, Screen.height);
+                        //Vector3 YPosition = new Vector3();
+                        //YPosition.y = Mathf.Clamp(Input.mousePosition.y, Screen.height - 68, Screen.height);
 
                         Rect SlotBoxes = new Rect(
-                            (Screen.width / 2 - 128) + (x * 128),
+                            (Screen.width / 2 - 128) + (x * 164),
                             SlotLerpedPosition,
                             64,
                             64);
@@ -127,7 +127,7 @@ public class Inventory : MonoBehaviour
                     if (SlotLerpedPosition <= toVal)
                     {
                         Rect SlotBoxes = new Rect(
-                            (Screen.width / 2 - 128) + (x * 128),
+                            (Screen.width / 2 - 128) + (x * 164),
                             toVal,
                             64,
                             64);
