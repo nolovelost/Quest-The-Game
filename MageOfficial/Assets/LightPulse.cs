@@ -8,34 +8,42 @@ public class LightPulse : MonoBehaviour {
   //  public GameObject hole;
  //   public GameObject background;
 
-    public RectTransform hole;
-    public RectTransform background;
+    public Image hole;
+    public Image background;
 
-    public float ler = 1.0f;
-    public int fluct = 1;
+     Animator pulse;
+    public ParticleSystem staff;
+    
+
+    
     // Use this for initialization
     void Start () {
-        InvokeRepeating("Smaller", 1, ler);
-        InvokeRepeating("Bigger", 1.5f,ler);
+        staff.Stop();
+      pulse =  this.transform.GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        //Smaller();
-       // Bigger();
+        
         
 
     }
-    void Smaller()
+   public void Darkness()
     {
+        hole.color = Color.black;
+        background.color = Color.black;
+        pulse.SetBool("pulse", false);
+        staff.Stop();
 
-        hole.sizeDelta = Vector2.Lerp(new Vector2(hole.sizeDelta.x, hole.sizeDelta.y), new Vector2(hole.sizeDelta.x - fluct, hole.sizeDelta.y - fluct),Time.deltaTime);
-        background.sizeDelta = Vector2.Lerp(new Vector2(background.sizeDelta.x, background.sizeDelta.y), new Vector2(background.sizeDelta.x - fluct, background.sizeDelta.y - fluct),  Time.deltaTime);
     }
 
-    void Bigger()
+   public void Light()
     {
-        hole.sizeDelta = Vector2.Lerp(new Vector2(hole.sizeDelta.x, hole.sizeDelta.y), new Vector2(hole.sizeDelta.x + fluct, hole.sizeDelta.y + fluct),  Time.deltaTime);
-        background.sizeDelta = Vector2.Lerp(new Vector2(background.sizeDelta.x, background.sizeDelta.y), new Vector2(background.sizeDelta.x + fluct, background.sizeDelta.y + fluct),  Time.deltaTime);
+        Debug.Log("light");
+        staff.Play();
+        //uses Int32, must ? be hard coded in
+        pulse.SetBool("pulse", true);
+        hole.color  = new Color32(255, 0, 237, 50);
+        background.color = new Color32(0, 0, 0, 180);
     }
 }

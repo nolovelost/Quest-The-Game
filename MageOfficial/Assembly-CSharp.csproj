@@ -124,8 +124,10 @@
      <Compile Include="Assets\Scripts\PlayerStatus\RadialSliderUI\Scripts\RadialSlider.cs" />
      <Compile Include="Assets\Scripts\PlayerStatus\SelfInflictDamage_test.cs" />
      <Compile Include="Assets\Scripts\Rendering\Sort.cs" />
+     <Compile Include="Assets\Scripts\Rotate.cs" />
      <Compile Include="Assets\Scripts\SceneManagement\FallToHallway.cs" />
      <Compile Include="Assets\Scripts\SceneManagement\HallwayToChamber.cs" />
+     <Compile Include="Assets\Scripts\SceneManagement\StartToLoad.cs" />
      <Compile Include="Assets\Scripts\SceneManagement\StreetTounderground.cs" />
      <Compile Include="Assets\Scripts\SpellSystem\ArbitraryMove.cs" />
      <Compile Include="Assets\Scripts\SpellSystem\EnemyBolt.cs" />

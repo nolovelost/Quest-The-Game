@@ -53,7 +53,7 @@ public class Enemy_movement : MonoBehaviour
     {
         Vector3 firstOffsetPosition = target.position;
         firstOffsetPosition.x -= positionOffset/2;
-        PathRequester.RequestPath(this.transform.position, firstOffsetPosition, OnPathFound);
+        PathRequester.enemyRequestPath(this.transform.position, firstOffsetPosition, OnPathFound);
         playerAnim = this.transform.GetComponent<Animator>();
      //   InvokeRepeating("Chase", 1, 2f);
     }
