@@ -14,18 +14,21 @@ public class TimerBehaviour : MonoBehaviour
     public Image TimerEndingImage;                                  // Reference to an image to flash on the screen on being hurt.
     public float flashSpeed = 5f;                                   // The speed the TimerEndingImage will fade at.
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);         // The colour the TimerEndingImage is set to, to flash.
+
+    public float castTime = 3.0f;
+
     bool IsTiming = false;
     float NormalizedTime;
-    
+
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         CurrentTimer = StartingTimer;
         CurrentTime = TotalTime;
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
         TimeSlider.value = CurrentTimer;
         TimeSlider2.value = CurrentTimer;
@@ -37,17 +40,12 @@ public class TimerBehaviour : MonoBehaviour
             CurrentTimer = NormalizedTime * 100.0f;
         }
 
-        if (Input.GetButtonDown("ToggleInventory"))
-        {
-            SetTimer(3.0f);
-            StartTimer();
-        }
 
         if (CurrentTime <= 0.0f)
         {
             ResetTimer();
         }
-	}
+    }
 
     public void SetTimer(float Seconds)
     {
@@ -63,5 +61,13 @@ public class TimerBehaviour : MonoBehaviour
     {
         CurrentTime = TotalTime;
         IsTiming = false;
+    }
+
+    public void StartCast()
+    {
+        ResetTimer();
+        SetTimer(castTime);
+            StartTimer();
+
     }
 }

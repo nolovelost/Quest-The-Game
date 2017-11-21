@@ -261,6 +261,7 @@ public class PanelDraw : MonoBehaviour
         player.GetComponent<Unit>().canMove = false;
         //start the casting animation
         player.GetComponent<Unit>().isCasting = true;
+        this.transform.GetComponent<TimerBehaviour>().StartCast();
 
        
         // activate ane set up the draw area

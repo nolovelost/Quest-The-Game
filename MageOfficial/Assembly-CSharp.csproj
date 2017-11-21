@@ -105,6 +105,8 @@
      <Compile Include="Assets\Scripts\InventorySystem\Inventory.cs" />
      <Compile Include="Assets\Scripts\InventorySystem\Scroll.cs" />
      <Compile Include="Assets\Scripts\InventorySystem\ScrollDatabase.cs" />
+     <Compile Include="Assets\Scripts\LoadingScreen\RotateWheel.cs" />
+     <Compile Include="Assets\Scripts\LoadingScreen\TranslateSmoke.cs" />
      <Compile Include="Assets\Scripts\PathFinding\Enemy_movement.cs" />
      <Compile Include="Assets\Scripts\PathFinding\Grid.cs" />
      <Compile Include="Assets\Scripts\PathFinding\Node.cs" />
