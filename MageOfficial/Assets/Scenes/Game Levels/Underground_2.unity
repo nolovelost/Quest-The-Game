@@ -9720,7 +9720,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: eec2497ce901d564cbc617e79f55d2c1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4931897054cc4964e9ff0229bcddcacc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10848,4 +10848,7 @@ MonoBehaviour:
   CurrentTimer: 0
   TimeSlider: {fileID: 985519272}
   TimeSlider2: {fileID: 985519271}
+  TimerEndingImage: {fileID: 0}
+  flashSpeed: 5
+  flashColour: {r: 1, g: 0, b: 0, a: 0.1}
   castTime: 3
