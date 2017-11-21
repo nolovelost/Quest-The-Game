@@ -8,6 +8,7 @@ public class PlayerBolt : MonoBehaviour {
     private Vector3 HomingDirection;
     private bool isTargetAcquired;
     public int damage = 15;
+    bool dealtDamage = false;
 
     bool targetReached = false;
     public float speed = 1.0f;
@@ -34,8 +35,15 @@ public class PlayerBolt : MonoBehaviour {
             if (targetReached)
             {
                 //Play Animation ??
-                lockedTarget.transform.GetComponent<Enemy>().TakeDamage(damage);
-                DestroyObject(this.gameObject);
+                //make it deal damage only once
+                if (!dealtDamage)
+                {
+                 lockedTarget.transform.GetComponent<Enemy>().TakeDamage(damage);
+                }
+                dealtDamage = true;
+           Animator   switcher =  this.transform.GetComponent<Animator>();
+                switcher.SetTrigger("toHit");
+                DestroyObject(this.gameObject,0.3f);
             }
         }
         else

@@ -97,6 +97,7 @@
      <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
      <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
+     <Compile Include="Assets\Rave1.cs" />
      <Compile Include="Assets\Scripts\CameraFloow.cs" />
      <Compile Include="Assets\Scripts\Catmul.cs" />
      <Compile Include="Assets\Scripts\Enemies\ElementalAttack.cs" />
@@ -123,7 +124,9 @@
      <Compile Include="Assets\Scripts\PlayerStatus\RadialPlayerHealth.cs" />
      <Compile Include="Assets\Scripts\PlayerStatus\RadialSliderUI\Scripts\RadialSlider.cs" />
      <Compile Include="Assets\Scripts\PlayerStatus\SelfInflictDamage_test.cs" />
+     <Compile Include="Assets\Scripts\PlayerStatus\TimerSlider\TimerBehaviour.cs" />
      <Compile Include="Assets\Scripts\Rendering\Sort.cs" />
+     <Compile Include="Assets\Scripts\Rendering\SortParticle.cs" />
      <Compile Include="Assets\Scripts\Rotate.cs" />
      <Compile Include="Assets\Scripts\SceneManagement\FallToHallway.cs" />
      <Compile Include="Assets\Scripts\SceneManagement\HallwayToChamber.cs" />
@@ -137,6 +140,7 @@
      <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
      <None Include="Assets\PostProcessing\Resources\Shaders\Fog.shader" />
+     <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
      <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\LutGen.shader" />
      <None Include="Assets\Scripts\PDollar\Resources\GestureSet\Spells\combo2-131535311129777383.xml" />

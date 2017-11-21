@@ -8,6 +8,8 @@ public class EnemyBolt : MonoBehaviour {
     private Rigidbody2D RocketRigidBody;
     private Vector3 HomingDirection;
     private bool isTargetAcquired;
+    bool dealtDamage = false;
+
 
     bool targetReached = false;
     public float speed = 1.0f;
@@ -33,10 +35,14 @@ public class EnemyBolt : MonoBehaviour {
             MoveToTarget();
             if (targetReached)
             {
+                if (!dealtDamage)
+                {
                 lockedTarget.transform.GetComponent<Player>().health.TakeDamage(damage);
-
-                //Play Animation ??
-                DestroyObject(this.gameObject);
+                }
+                dealtDamage = true;
+                Animator switcher = this.transform.GetComponent<Animator>();
+                switcher.SetTrigger("toHit");
+                DestroyObject(this.gameObject, 0.3f);
             }
         }
         else

@@ -34,9 +34,9 @@ public class PathRequester : MonoBehaviour {
 
     public static void enemyRequestPath(Vector3 start, Vector3 end, Action<Vector3[], bool> callback)
     {
-        PathRequest newRequest = new PathRequest(start, end, callback);
-        instance.enemyPathRequestQueue.Enqueue(newRequest);
-        instance.TryProcessNext();
+        PathRequest enemyNewRequest = new PathRequest(start, end, callback);
+        instance.enemyPathRequestQueue.Enqueue(enemyNewRequest);
+        instance.TryProcessEnemyNext();
     }
 
     struct PathRequest
@@ -84,8 +84,8 @@ public class PathRequester : MonoBehaviour {
 
     public void FinishedProcessingEnemyPath(Vector3[] path, bool success)
     {
-        currentPathRequest.callback(path, success);
-        isProcessingPath = false;
-        TryProcessNext();
+        currentEnemyPathRequest.callback(path, success);
+        isProcessingEnemyPath = false;
+        TryProcessEnemyNext();
     }
 }

@@ -13,6 +13,7 @@ public class Sort : MonoBehaviour {
     void Update()
     {
         Renderer renderer = this.transform.GetComponent<SpriteRenderer>();
+        Renderer renderPart = this.transform.GetComponent<ParticleSystemRenderer>();
         renderer.sortingOrder = -(int)(transform.position.y * IsometricRangePerYUnit);
     }
 }

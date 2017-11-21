@@ -22,7 +22,8 @@ GameObject:
   - component: {fileID: 212325133335626054}
   - component: {fileID: 50784902672914292}
   - component: {fileID: 114319356151810916}
-  - component: {fileID: 61184184981722224}
+  - component: {fileID: 70158316664964318}
+  - component: {fileID: 95283958734993938}
   m_Layer: 0
   m_Name: rocketPlayer
   m_TagString: Untagged
@@ -63,8 +64,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61184184981722224
-BoxCollider2D:
+--- !u!70 &70158316664964318
+CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -75,19 +76,26 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3, y: 2.29}
-    newSize: {x: 3, y: 2.29}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3, y: 2.29}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: 0.45}
+  m_Size: {x: 3.48, y: 0.96}
+  m_Direction: 1
+--- !u!95 &95283958734993938
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1355023758342224}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3f57e65c07f18064bbf03de5d38e9273, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114319356151810916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,6 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockedTarget: {fileID: 0}
+  damage: 15
   speed: 1
 --- !u!212 &212325133335626054
 SpriteRenderer:
@@ -133,12 +142,12 @@ SpriteRenderer:
   m_SortingLayerID: -942116105
   m_SortingLayer: 1
   m_SortingOrder: 3117
-  m_Sprite: {fileID: 21300000, guid: c239f37e84d0ab04ab7cb20300cbe166, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 59684bd97d1a6314eaf47c5f35f04537, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3, y: 2.29}
+  m_Size: {x: 6.5, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

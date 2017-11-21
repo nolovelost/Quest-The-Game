@@ -106,6 +106,7 @@ public class PathFinding : MonoBehaviour {
 
         }
         manager.FinishedProcessingPath(waypoints, pathFound);
+       // manager.FinishedProcessingEnemyPath(waypoints, pathFound);
 
     }
 

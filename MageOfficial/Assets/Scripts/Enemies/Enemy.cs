@@ -10,10 +10,18 @@ public class Enemy : MonoBehaviour {
     public AudioSource Grunt1;
     public AudioSource Grunt2;
     public AudioSource Grunt3;
+
+    public Sprite heart3;
+    public Sprite heart2;
+    public Sprite heart1;
+
+    public GameObject heart;
+     SpriteRenderer heartState;
 	// Use this for initialization
 	void Start () {
         currenthealth = startHealth;
         InvokeRepeating("Grunt", .5f, Random.Range(1.5f,5));
+        heartState = heart.GetComponent<SpriteRenderer>();
 	}
 
     void Grunt()
@@ -27,9 +35,14 @@ public class Enemy : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
+        if (currenthealth <20)
+        {
+            heartState.sprite = heart2;
+        }
 
         if (currenthealth <= 0)
         {
+            
             Destroy(this.gameObject);
         }
 		
