@@ -11763,7 +11763,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.500061, y: -185.2}
+  m_AnchoredPosition: {x: -2.500061, y: -185.20001}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1167617910
@@ -16037,7 +16037,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: eec2497ce901d564cbc617e79f55d2c1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2e734d0192ba7a43994c9d5cd1494ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16467,51 +16467,17 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 1713876269}
-    - target: {fileID: 114595692224160522, guid: 8c21f5802ce716441b4a2eff380f4435,
-        type: 2}
-      propertyPath: speed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 82222950700795246, guid: 8c21f5802ce716441b4a2eff380f4435,
-        type: 2}
-      propertyPath: m_Volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 82423202235360178, guid: 8c21f5802ce716441b4a2eff380f4435,
-        type: 2}
-      propertyPath: m_Volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 82887102851675212, guid: 8c21f5802ce716441b4a2eff380f4435,
-        type: 2}
-      propertyPath: m_Volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 82387238728565442, guid: 8c21f5802ce716441b4a2eff380f4435,
-        type: 2}
-      propertyPath: m_Volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 82257742632669070, guid: 8c21f5802ce716441b4a2eff380f4435,
-        type: 2}
-      propertyPath: m_Volume
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 4472878250075136, guid: 8c21f5802ce716441b4a2eff380f4435, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4472878250075136, guid: 8c21f5802ce716441b4a2eff380f4435, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4472878250075136, guid: 8c21f5802ce716441b4a2eff380f4435, type: 2}
       propertyPath: m_LocalScale.z
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1724636500532428, guid: 8c21f5802ce716441b4a2eff380f4435, type: 2}
-      propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8c21f5802ce716441b4a2eff380f4435, type: 2}
@@ -17144,4 +17110,7 @@ MonoBehaviour:
   CurrentTimer: 0
   TimeSlider: {fileID: 1271629688}
   TimeSlider2: {fileID: 337822590}
+  TimerEndingImage: {fileID: 0}
+  flashSpeed: 5
+  flashColour: {r: 1, g: 0, b: 0, a: 0.1}
   castTime: 3

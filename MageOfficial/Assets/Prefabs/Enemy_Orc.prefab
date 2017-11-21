@@ -76,7 +76,7 @@ Transform:
   m_GameObject: {fileID: 1644151377417092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 4.38, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 4429260790100304}
   m_RootOrder: 0
@@ -127,7 +127,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: eba1a3ec9da788f4a98abf011bb99b8e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -207,7 +207,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 963493c576ce5d347a4947d971f2aa6f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -287,7 +287,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3763d2a256713a1459fac70d162daf1f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -367,7 +367,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 04e1487ca445d25418d47aa03c1258e6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -447,7 +447,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 018d6fe696a6b4a4f974fda3e4a4a2fa, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -550,9 +550,9 @@ MonoBehaviour:
   Grunt1: {fileID: 82887102851675212}
   Grunt2: {fileID: 82387238728565442}
   Grunt3: {fileID: 82257742632669070}
-  heart3: {fileID: 21300000, guid: 0cd26b986b8839a458b6dad15e819e95, type: 3}
-  heart2: {fileID: 21300000, guid: 8872d0351224b02409937209a9a5f08e, type: 3}
-  heart1: {fileID: 21300000, guid: 8dd8fc971871bde4b8a342ae98b240b7, type: 3}
+  heart3: {fileID: 21300000, guid: 418e222b93d30a541b328cd7e2eccc9c, type: 3}
+  heart2: {fileID: 21300000, guid: d2a33cba64a2f6e4f9c223404be6572b, type: 3}
+  heart1: {fileID: 21300000, guid: ec88a3318d6d25b4f95d3ad2350b45a4, type: 3}
   heart: {fileID: 1644151377417092}
 --- !u!114 &114595692224160522
 MonoBehaviour:
@@ -569,7 +569,7 @@ MonoBehaviour:
   meleeDmg: 10
   attackRange: 0.25
   positionOffset: 0.2
-  speed: 0.1
+  speed: 0.5
   attackSound: {fileID: 82423202235360178}
   lag: 0.5
   attackLag: 0.667
@@ -616,7 +616,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7eb6e11fd103f1f47a5ca4a82cf50a0d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ef90d00f407f79346a9e7f906d84a687, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
