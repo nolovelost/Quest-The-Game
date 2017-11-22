@@ -1097,6 +1097,26 @@ Prefab:
       propertyPath: m_Volume
       value: 0.573
       objectReference: {fileID: 0}
+    - target: {fileID: 82573510502041300, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.531
+      objectReference: {fileID: 0}
+    - target: {fileID: 82559621948546930, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 82728863070927066, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 82413155483942106, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.609
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50bccb3841cd8c248a2e56ef2b9507a7, type: 2}
   m_IsPrefabParent: 0
@@ -3626,7 +3646,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: f98c37062f5c3a644bf221d00cffdec1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.867
+  m_Volume: 0.687
   m_Pitch: 1
   Loop: 1
   Mute: 0
