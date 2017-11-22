@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Game Levels/Street.unity
-=======
-- path: Assets/Scenes/Game Levels/Underground_2.unity
->>>>>>> 26fc5a0667c187f3cd643b719b76a15bafad4644
+- path: Assets/Scenes/Game Levels/Underground_3.unity
   isLoaded: 1
   isActive: 1
