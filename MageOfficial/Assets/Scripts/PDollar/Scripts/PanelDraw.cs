@@ -301,9 +301,16 @@ public class PanelDraw : MonoBehaviour
 
     IEnumerator Light()
     {
+        
+        releaseSound.Play();
+        
+        while (releaseSound.isPlaying == true)
+        {
+            yield return null;
+        }
         lightSystem.transform.GetComponent<LightPulse>().Light();
         StopDrawing();
-        yield return null; 
+        
     }
     public void StartDrawing()
     {   //stop player mmovement
@@ -322,6 +329,7 @@ public class PanelDraw : MonoBehaviour
 
     public void StopDrawing()
     {
+        drawSound.Stop();
         //start player mmovement
         player.GetComponent<Unit>().canMove = true;
         //stop the casting animation
