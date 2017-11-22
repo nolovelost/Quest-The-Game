@@ -23,6 +23,9 @@ public class Unit : MonoBehaviour
     //   CameraFloow offsetPass;
     //testing smoothing
     Catmul smoothing;
+    bool leftFacing = true;
+    bool RightFacing = false;
+
 
     public void OnDrawGizmos()
     {
@@ -106,19 +109,59 @@ public class Unit : MonoBehaviour
            
             clickTarget.z = transform.position.z;
             Enemy_movement.recalculate = true;
-                        if (clickTarget.x < this.transform.position.x)
-                        {
-                            this.transform.GetComponent<SpriteRenderer>().flipX = false;
-                //move the camera depending on direction going
-              //  offsetPass.offset.x = -5;
-                        }
-                        else
-                        {
-                            this.transform.GetComponent<SpriteRenderer>().flipX = true;
-              //  offsetPass.offset.x = 5;
+          //  bool leftFacing = true;
+         //   bool RightFacing = false;
+            if (clickTarget.x < this.transform.position.x)
+            { RightFacing = false;
+                if (!leftFacing)
+                {
+                 this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
+                                leftFacing = true;
+                               
+                }
+               
+            }
+            else
+            {leftFacing = false;
+                if (!RightFacing)
+                {
+                    this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
+                    RightFacing = true;
+                }
+                
+                
 
             }
-                        PathRequester.RequestPath(this.transform.position, clickTarget, OnPathFound);
+
+                /*
+                            if (clickTarget.x < this.transform.position.x)
+                            {
+                    if (!leftFacing)
+                    {
+                        this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
+                    }
+                    leftFacing = true;
+                    RightFacing = false;
+                  //  this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
+                                //this.transform.GetComponent<SpriteRenderer>().flipX = false;
+                    //move the camera depending on direction going
+                  //  offsetPass.offset.x = -5;
+                            }
+                            else
+                            {
+                    if (!RightFacing)
+                    {
+                        this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
+                    }
+                    RightFacing = true;
+                    leftFacing = false;
+                  //  this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
+                    //  this.transform.GetComponent<SpriteRenderer>().flipX = true;
+                    //  offsetPass.offset.x = 5;
+
+                }
+                            */
+                PathRequester.RequestPath(this.transform.position, clickTarget, OnPathFound);
                
                     }
         Debug.Log(clickDebug);

@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 using PDollarGestureRecognizer;
 
@@ -11,6 +12,7 @@ public class PanelDraw : MonoBehaviour
     //test
      public GameObject boom;
      public GameObject whush;
+    public GameObject lightSystem;
     //audio
     public AudioSource drawSound;
     public AudioSource releaseSound;
@@ -165,6 +167,46 @@ public class PanelDraw : MonoBehaviour
         Gesture beingTested = new Gesture(points.ToArray());
         Result result = PointCloudRecognizer.Classify(beingTested, savedGestures.ToArray());
         print("name: " + result.GestureClass + " score: " + result.Score);
+        //get the first 3 letters
+        string id = result.GestureClass.Substring(0, 3);
+
+        switch (id)
+        {
+            case "aoe":
+                Debug.Log("/////////////////////////////////////SWTICHT AOE");
+                StartCoroutine("AoE");
+                break;
+
+            case "bol":
+                Debug.Log("/////////////////////////////////////SWTICHT BOLT");
+                StartCoroutine("Bolt");
+                break;
+                //the code is time but used for light now,
+            case "tim":
+                Debug.Log("/////////////////////////////////////SWTICHT Light");
+                //only in one scene
+                Scene check = SceneManager.GetActiveScene();
+                if (check.name == "Underground_2")
+                {
+                    StartCoroutine("Light");
+                }
+                break;
+
+            case "fir":
+                Debug.Log("/////////////////////////////////////SWTICHT FIRE");
+                break;
+
+            case "com":
+                Debug.Log("/////////////////////////////////////SWTICHT COMBO");
+                break;
+
+            default:
+                print("wrong");
+                break;
+
+
+        }
+    }
         /*  if (result.Score >= 0.7f )
           {
 
@@ -176,7 +218,7 @@ public class PanelDraw : MonoBehaviour
 
 
         ///////////////TEST
-
+        /*
         if (result.GestureClass.Substring(0,3) == "aoe")
         {
             print("BOOM");
@@ -196,7 +238,7 @@ public class PanelDraw : MonoBehaviour
         }
 
     }
-
+    */
 
         //  return result;
         /*
@@ -255,6 +297,13 @@ public class PanelDraw : MonoBehaviour
         
         
         
+    }
+
+    IEnumerator Light()
+    {
+        lightSystem.transform.GetComponent<LightPulse>().Light();
+        StopDrawing();
+        yield return null; 
     }
     public void StartDrawing()
     {   //stop player mmovement
