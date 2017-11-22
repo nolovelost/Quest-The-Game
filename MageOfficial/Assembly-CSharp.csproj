@@ -151,10 +151,12 @@
      <None Include="Assets\Scripts\PDollar\Resources\GestureSet\Spells\aoe2-131535306975820865.xml" />
      <None Include="Assets\Scripts\PDollar\Resources\GestureSet\Spells\fire2-131535307670041969.xml" />
      <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
+     <None Include="Assets\Scripts\PDollar\Resources\GestureSet\Spells\combo4-131557766983884237.xml" />
      <None Include="Assets\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\ACES.cginc" />
      <None Include="Assets\Scripts\PDollar\Resources\GestureSet\Spells\bolt2-131535306015772835.xml" />
      <None Include="Assets\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
+     <None Include="Assets\Scripts\PDollar\Resources\GestureSet\Spells\fire5-131557766849988441.xml" />
      <None Include="Assets\PostProcessing\Resources\Shaders\Tonemapping.cginc" />
      <None Include="Assets\Scripts\PDollar\Resources\GestureSet\Spells\time3-131535308356176549.xml" />
      <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
@@ -163,6 +165,7 @@
      <None Include="Assets\PostProcessing\Resources\Shaders\Blit.shader" />
      <None Include="Assets\Scripts\PDollar\Resources\GestureSet\Spells\time2-131535307985791613.xml" />
      <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformRender.shader" />
+     <None Include="Assets\Scripts\PDollar\Resources\GestureSet\Spells\fire4-131557766562770225.xml" />
      <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeCompute.compute" />
      <None Include="Assets\PostProcessing\Resources\Shaders\FXAA3.cginc" />
      <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.shader" />
@@ -185,8 +188,10 @@
      <None Include="Assets\PostProcessing\Resources\Shaders\FXAA.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\DiskKernels.cginc" />
      <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.cginc" />
+     <None Include="Assets\Scripts\PDollar\Resources\GestureSet\Spells\bolt4-131557766250209668.xml" />
      <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceRaytrace.cginc" />
      <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.shader" />
+     <None Include="Assets\Scripts\PDollar\Resources\GestureSet\Spells\bolt6-131557766470655451.xml" />
      <None Include="Assets\Scripts\PDollar\Resources\GestureSet\Spells\combo1-131535310882289203.xml" />
      <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
