@@ -1062,6 +1062,61 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 1713876268}
+    - target: {fileID: 82013708493183426, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243568538969333010, guid: 5189d41a1b412de4fb354be7ca30301a,
+        type: 2}
+    - target: {fileID: 82573510502041300, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243568538969333010, guid: 5189d41a1b412de4fb354be7ca30301a,
+        type: 2}
+    - target: {fileID: 82559621948546930, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243568538969333010, guid: 5189d41a1b412de4fb354be7ca30301a,
+        type: 2}
+    - target: {fileID: 82728863070927066, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243568538969333010, guid: 5189d41a1b412de4fb354be7ca30301a,
+        type: 2}
+    - target: {fileID: 82413155483942106, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243568538969333010, guid: 5189d41a1b412de4fb354be7ca30301a,
+        type: 2}
+    - target: {fileID: 82013708493183426, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.573
+      objectReference: {fileID: 0}
+    - target: {fileID: 82573510502041300, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.531
+      objectReference: {fileID: 0}
+    - target: {fileID: 82559621948546930, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 82728863070927066, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 82413155483942106, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.609
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50bccb3841cd8c248a2e56ef2b9507a7, type: 2}
   m_IsPrefabParent: 0
@@ -1129,7 +1184,8 @@ AudioSource:
   m_GameObject: {fileID: 506998551}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243600958002424244, guid: 5189d41a1b412de4fb354be7ca30301a,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 61672b543a4b18e429a3251861a1ad5a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1188,7 +1244,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2720,7 +2776,8 @@ AudioSource:
   m_GameObject: {fileID: 1434284557}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243600958002424244, guid: 5189d41a1b412de4fb354be7ca30301a,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: b990c27c50c9347468c08801c81907f5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2779,7 +2836,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -3585,10 +3642,11 @@ AudioSource:
   m_GameObject: {fileID: 2009733622}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243065569443681678, guid: 5189d41a1b412de4fb354be7ca30301a,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: f98c37062f5c3a644bf221d00cffdec1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.687
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3644,7 +3702,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -3969,6 +4027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boom: {fileID: 1331331783385288, guid: f1bb322b0c3d4d74e80b443db0925bea, type: 2}
   whush: {fileID: 1355023758342224, guid: 458195f4ec89a1a429e7b3251d242198, type: 2}
+  lightSystem: {fileID: 0}
   drawSound: {fileID: 506998552}
   releaseSound: {fileID: 1434284558}
   player: {fileID: 1713876268}

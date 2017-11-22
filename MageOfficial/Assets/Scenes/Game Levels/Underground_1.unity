@@ -1074,6 +1074,36 @@ Prefab:
       propertyPath: damageTaken
       value: 
       objectReference: {fileID: 1254989533}
+    - target: {fileID: 82222950700795246, guid: 8c21f5802ce716441b4a2eff380f4435,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243568538969333010, guid: 5189d41a1b412de4fb354be7ca30301a,
+        type: 2}
+    - target: {fileID: 82423202235360178, guid: 8c21f5802ce716441b4a2eff380f4435,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243568538969333010, guid: 5189d41a1b412de4fb354be7ca30301a,
+        type: 2}
+    - target: {fileID: 82887102851675212, guid: 8c21f5802ce716441b4a2eff380f4435,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243568538969333010, guid: 5189d41a1b412de4fb354be7ca30301a,
+        type: 2}
+    - target: {fileID: 82387238728565442, guid: 8c21f5802ce716441b4a2eff380f4435,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243568538969333010, guid: 5189d41a1b412de4fb354be7ca30301a,
+        type: 2}
+    - target: {fileID: 82257742632669070, guid: 8c21f5802ce716441b4a2eff380f4435,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243568538969333010, guid: 5189d41a1b412de4fb354be7ca30301a,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8c21f5802ce716441b4a2eff380f4435, type: 2}
   m_IsPrefabParent: 0
@@ -1721,7 +1751,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1055069841
+  randomSeed: 2107185990
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -8647,7 +8677,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1593104803
+  randomSeed: -793463742
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -17101,6 +17131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boom: {fileID: 1331331783385288, guid: f1bb322b0c3d4d74e80b443db0925bea, type: 2}
   whush: {fileID: 1355023758342224, guid: 458195f4ec89a1a429e7b3251d242198, type: 2}
+  lightSystem: {fileID: 0}
   drawSound: {fileID: 506998552}
   releaseSound: {fileID: 1434284558}
   player: {fileID: 1713876268}
