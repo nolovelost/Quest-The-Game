@@ -9,10 +9,11 @@ using PDollarGestureRecognizer;
 
 public class PanelDraw : MonoBehaviour
 {
-    //test
+    //Magic
      public GameObject boom;
      public GameObject whush;
     public GameObject lightSystem;
+    public GameObject AreaofEffect;
     //audio
     public AudioSource drawSound;
     public AudioSource releaseSound;
@@ -77,7 +78,7 @@ public class PanelDraw : MonoBehaviour
     
     void Update()
     {
-        
+        Debug.Log("RUNNING");
 
         if (platform == RuntimePlatform.Android || platform == RuntimePlatform.IPhonePlayer)
         {
@@ -156,7 +157,7 @@ public class PanelDraw : MonoBehaviour
     void OnGUI()
     {
        // GUI.backgroundColor = Color.red;
-      //  GUI.Box(drawArea, "Draw Area");
+        GUI.Box(drawArea, "Draw Area");
     }
 
     #region MyFunctions
@@ -293,7 +294,8 @@ public class PanelDraw : MonoBehaviour
         targetPos.z = 0;
         Vector3 screenPos = Camera.main.ScreenToWorldPoint(targetPos);
         //instatntiate the spell
-        Instantiate(boom, targetPos, Quaternion.identity);
+       GameObject explosion = Instantiate(AreaofEffect, targetPos, Quaternion.identity);
+        Destroy(explosion, .90f);
         
         
         
@@ -322,7 +324,7 @@ public class PanelDraw : MonoBehaviour
        
         // activate ane set up the draw area
         UIPanel.gameObject.SetActive(true);
-         drawArea = new Rect(UIPanel.rect.xMin, UIPanel.rect.yMax, UIPanel.rect.width  * canvas.scaleFactor, UIPanel.rect.height * canvas.scaleFactor);
+        drawArea = new Rect(UIPanel.rect.xMin, UIPanel.rect.yMax, UIPanel.rect.width  * canvas.scaleFactor, UIPanel.rect.height * canvas.scaleFactor);
 
 
     }

@@ -319,7 +319,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 055625ac123925c4bb70ed456beb1790, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 991eb9a7f00f13b4589cad4bfd5bf537, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -547,8 +547,8 @@ Canvas:
   m_GameObject: {fileID: 848971317}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 170346097}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -614,8 +614,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -5.2507935, y: -40.136993}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -5.2507935, y: -29.600006}
+  m_SizeDelta: {x: 91.1, y: 71.2}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &890790232
 MonoBehaviour:

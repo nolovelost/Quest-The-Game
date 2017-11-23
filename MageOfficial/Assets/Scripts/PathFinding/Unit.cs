@@ -26,6 +26,11 @@ public class Unit : MonoBehaviour
     bool leftFacing = true;
     bool RightFacing = false;
 
+    //idnicator
+    public GameObject indicator;
+    GameObject current;
+    Vector3 pos;
+
 
     public void OnDrawGizmos()
     {
@@ -58,6 +63,7 @@ public class Unit : MonoBehaviour
     {
         if (successful)
         {
+            
             path = newPath;
             //in case its running
           //  path = smoothing.CatmulRomCalculate(new Vector2(path[0].x,path[0].y),new Vector2(path[path.Length-1].x, path[path.Length-1].y));
@@ -69,7 +75,8 @@ public class Unit : MonoBehaviour
     {//start at the beginning
         isMoving = true;
         Vector3 currentWaypoint = path[0];
-
+        pos = path[path.Length-1];
+        StartCoroutine("Indicate");
         //reset so can be reused ?
         targetIndex = 0;
         while (true)
@@ -105,9 +112,13 @@ public class Unit : MonoBehaviour
                     {
             clickDebug++;
                         clickTarget = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            clickTarget.z = transform.position.z;
+            pos = clickTarget;
+          //  StartCoroutine("Indicate");
+            
             //move the camera depending on direction going
            
-            clickTarget.z = transform.position.z;
+         //   clickTarget.z = transform.position.z;
             Enemy_movement.recalculate = true;
           //  bool leftFacing = true;
          //   bool RightFacing = false;
@@ -168,6 +179,19 @@ public class Unit : MonoBehaviour
         
        //redrawing the gizmos for testing
         SceneView.RepaintAll();
+
+    }
+    IEnumerator Indicate()
+    {//destroy old one
+        if (current != null)
+        {
+            Destroy(current);
+        }
+       
+        current = Instantiate(indicator, pos, Quaternion.identity);
+        Destroy(current, 1.5f);
+        yield return null;
+
 
     }
 }
