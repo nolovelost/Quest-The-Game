@@ -3243,7 +3243,7 @@ MonoBehaviour:
   cam: {fileID: 2147251641}
   canMove: 1
   isCasting: 0
-  indicator: {fileID: 0}
+  indicator: {fileID: 1221741891531184, guid: 93254eff75f1ca0448682320c20a5d74, type: 2}
 --- !u!70 &1713876272
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
