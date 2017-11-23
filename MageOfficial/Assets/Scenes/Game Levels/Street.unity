@@ -665,6 +665,48 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1220006258}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1001 &400765416
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4137970239743400, guid: 93254eff75f1ca0448682320c20a5d74, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137970239743400, guid: 93254eff75f1ca0448682320c20a5d74, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137970239743400, guid: 93254eff75f1ca0448682320c20a5d74, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137970239743400, guid: 93254eff75f1ca0448682320c20a5d74, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137970239743400, guid: 93254eff75f1ca0448682320c20a5d74, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137970239743400, guid: 93254eff75f1ca0448682320c20a5d74, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137970239743400, guid: 93254eff75f1ca0448682320c20a5d74, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137970239743400, guid: 93254eff75f1ca0448682320c20a5d74, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 93254eff75f1ca0448682320c20a5d74, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &506998551
 GameObject:
   m_ObjectHideFlags: 0
@@ -6126,7 +6168,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 0b1f343b64045cf45a9dc959a2fec7ff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 879387208aa198d42b5611974875b6a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6153,6 +6195,7 @@ MonoBehaviour:
   cam: {fileID: 2147251641}
   canMove: 1
   isCasting: 0
+  indicator: {fileID: 1221741891531184, guid: 93254eff75f1ca0448682320c20a5d74, type: 2}
 --- !u!114 &1713876272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6198,8 +6241,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.17462254, y: 0.17461538}
-  m_Size: {x: 2.3871899, y: 5.4985476}
+  m_Offset: {x: 0, y: 2.66}
+  m_Size: {x: 2.4, y: 5.23}
   m_Direction: 0
 --- !u!114 &1713876275
 MonoBehaviour:
@@ -6908,6 +6951,8 @@ MonoBehaviour:
   boom: {fileID: 1331331783385288, guid: f1bb322b0c3d4d74e80b443db0925bea, type: 2}
   whush: {fileID: 1355023758342224, guid: 458195f4ec89a1a429e7b3251d242198, type: 2}
   lightSystem: {fileID: 0}
+  AreaofEffect: {fileID: 1082566362833558, guid: f76eed49165c0a041a8a3f18516cefff,
+    type: 2}
   drawSound: {fileID: 506998552}
   releaseSound: {fileID: 1713876276}
   player: {fileID: 1713876268}

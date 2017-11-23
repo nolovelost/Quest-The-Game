@@ -9,10 +9,11 @@ using PDollarGestureRecognizer;
 
 public class PanelDraw : MonoBehaviour
 {
-    //test
+    //Magic
      public GameObject boom;
      public GameObject whush;
     public GameObject lightSystem;
+    public GameObject AreaofEffect;
     //audio
     public AudioSource drawSound;
     public AudioSource releaseSound;
@@ -293,7 +294,8 @@ public class PanelDraw : MonoBehaviour
         targetPos.z = 0;
         Vector3 screenPos = Camera.main.ScreenToWorldPoint(targetPos);
         //instatntiate the spell
-        Instantiate(boom, targetPos, Quaternion.identity);
+       GameObject explosion = Instantiate(AreaofEffect, targetPos, Quaternion.identity);
+        Destroy(explosion, .90f);
         
         
         

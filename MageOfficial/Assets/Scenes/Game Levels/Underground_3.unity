@@ -1022,11 +1022,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4889848114634806, guid: 50bccb3841cd8c248a2e56ef2b9507a7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.561
+      value: 1.778
       objectReference: {fileID: 0}
     - target: {fileID: 4889848114634806, guid: 50bccb3841cd8c248a2e56ef2b9507a7, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.959
+      value: -1.279
       objectReference: {fileID: 0}
     - target: {fileID: 4889848114634806, guid: 50bccb3841cd8c248a2e56ef2b9507a7, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1052,71 +1052,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 114969145558082768, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
-        type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1713876269}
     - target: {fileID: 114580136138268692, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
         type: 2}
       propertyPath: target
       value: 
       objectReference: {fileID: 1713876268}
-    - target: {fileID: 82013708493183426, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
+    - target: {fileID: 114969145558082768, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
         type: 2}
-      propertyPath: OutputAudioMixerGroup
+      propertyPath: target
       value: 
-      objectReference: {fileID: 243568538969333010, guid: 5189d41a1b412de4fb354be7ca30301a,
-        type: 2}
-    - target: {fileID: 82573510502041300, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
-        type: 2}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 243568538969333010, guid: 5189d41a1b412de4fb354be7ca30301a,
-        type: 2}
-    - target: {fileID: 82559621948546930, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
-        type: 2}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 243568538969333010, guid: 5189d41a1b412de4fb354be7ca30301a,
-        type: 2}
-    - target: {fileID: 82728863070927066, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
-        type: 2}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 243568538969333010, guid: 5189d41a1b412de4fb354be7ca30301a,
-        type: 2}
-    - target: {fileID: 82413155483942106, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
-        type: 2}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 243568538969333010, guid: 5189d41a1b412de4fb354be7ca30301a,
-        type: 2}
-    - target: {fileID: 82013708493183426, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
-        type: 2}
-      propertyPath: m_Volume
-      value: 0.573
-      objectReference: {fileID: 0}
-    - target: {fileID: 82573510502041300, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
-        type: 2}
-      propertyPath: m_Volume
-      value: 0.531
-      objectReference: {fileID: 0}
-    - target: {fileID: 82559621948546930, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
-        type: 2}
-      propertyPath: m_Volume
-      value: 0.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 82728863070927066, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
-        type: 2}
-      propertyPath: m_Volume
-      value: 0.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 82413155483942106, guid: 50bccb3841cd8c248a2e56ef2b9507a7,
-        type: 2}
-      propertyPath: m_Volume
-      value: 0.609
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1713876269}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50bccb3841cd8c248a2e56ef2b9507a7, type: 2}
   m_IsPrefabParent: 0
@@ -3271,7 +3216,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 0b1f343b64045cf45a9dc959a2fec7ff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 879387208aa198d42b5611974875b6a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3298,6 +3243,7 @@ MonoBehaviour:
   cam: {fileID: 2147251641}
   canMove: 1
   isCasting: 0
+  indicator: {fileID: 0}
 --- !u!70 &1713876272
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3310,7 +3256,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.14433473, y: 0.09622276}
+  m_Offset: {x: -0.14433473, y: 2.47}
   m_Size: {x: 2.3913307, y: 5.292445}
   m_Direction: 0
 --- !u!95 &1713876273
@@ -4028,6 +3974,8 @@ MonoBehaviour:
   boom: {fileID: 1331331783385288, guid: f1bb322b0c3d4d74e80b443db0925bea, type: 2}
   whush: {fileID: 1355023758342224, guid: 458195f4ec89a1a429e7b3251d242198, type: 2}
   lightSystem: {fileID: 0}
+  AreaofEffect: {fileID: 1082566362833558, guid: f76eed49165c0a041a8a3f18516cefff,
+    type: 2}
   drawSound: {fileID: 506998552}
   releaseSound: {fileID: 1434284558}
   player: {fileID: 1713876268}

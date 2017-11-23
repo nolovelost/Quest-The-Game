@@ -16,12 +16,15 @@ public class Enemy : MonoBehaviour {
     public Sprite heart1;
 
     public GameObject heart;
-     SpriteRenderer heartState;
+
+    SpriteRenderer heartState;
+    Animator animationControl;
 	// Use this for initialization
 	void Start () {
         currenthealth = startHealth;
         InvokeRepeating("Grunt", .5f, Random.Range(1.5f,5));
         heartState = heart.GetComponent<SpriteRenderer>();
+        animationControl = this.transform.GetComponent<Animator>();
 	}
 
     void Grunt()
@@ -42,8 +45,9 @@ public class Enemy : MonoBehaviour {
 
         if (currenthealth <= 0)
         {
-            
-            Destroy(this.gameObject);
+            animationControl.SetTrigger("Die");
+            heart.active = false;
+            Destroy(this.gameObject,0.8f);
         }
 		
 	}
@@ -51,6 +55,7 @@ public class Enemy : MonoBehaviour {
 
     public void TakeDamage(int damage)
     {
+        animationControl.SetTrigger("Damage");
         currenthealth -= damage;
         damageTaken.Play();
     }
