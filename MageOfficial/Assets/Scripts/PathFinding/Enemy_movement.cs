@@ -125,10 +125,12 @@ public class Enemy_movement : MonoBehaviour
     {
         attackSound.Play();
         target.transform.GetComponent<Player>().health.TakeDamage(meleeDmg);
-   /*     if (!attacked)
-        {
-            StartCoroutine("MeleeAttack");
-        }*/
+        target.transform.GetComponent<Animator>().SetTrigger("Damage");
+
+        /*     if (!attacked)
+             {
+                 StartCoroutine("MeleeAttack");
+             }*/
     }
     void Update()
     {
