@@ -8257,7 +8257,7 @@ GameObject:
   - component: {fileID: 1043383688}
   - component: {fileID: 1043383687}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: AudioFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8271,16 +8271,17 @@ AudioSource:
   m_GameObject: {fileID: 1043383686}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243746704170378438, guid: 5189d41a1b412de4fb354be7ca30301a,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 2ad6728fc69183741a111341a1f48c8c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 158
   DopplerLevel: 1
   MinDistance: 0.5
   MaxDistance: 1.5
@@ -8350,7 +8351,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1043383686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.077, y: -0.964, z: 0}
+  m_LocalPosition: {x: -1.077, y: -0.656, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -16156,7 +16157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 5.4999084, y: 0.86001587}
+  m_AnchoredPosition: {x: 5.499878, y: 0.86001587}
   m_SizeDelta: {x: 345.92, y: 372.26}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1630510767
