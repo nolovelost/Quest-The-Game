@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Game Levels/Start Screen.unity
+=======
+- path: Assets/Scenes/Game Levels/Underground_2.unity
+>>>>>>> 05b24aa213eb6bb1aa7cc3fcf727298dbbf35882
   isLoaded: 1
   isActive: 1
