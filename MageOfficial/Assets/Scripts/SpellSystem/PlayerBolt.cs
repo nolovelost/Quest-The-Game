@@ -43,6 +43,14 @@ public class PlayerBolt : MonoBehaviour {
                 dealtDamage = true;
            Animator   switcher =  this.transform.GetComponent<Animator>();
                 switcher.SetTrigger("toHit");
+
+                GameObject[] OurCircle = GameObject.FindGameObjectsWithTag("CirlceThingy");
+                foreach (GameObject TheCircle in OurCircle)
+                {
+                    // finds all objects w/ tah cirlce thingy... and disables the sprite renderer
+                    TheCircle.GetComponent<SpriteRenderer>().enabled = false;
+                }
+
                 DestroyObject(this.gameObject,0.3f);
             }
         }
