@@ -10,7 +10,8 @@ using PDollarGestureRecognizer;
 public class PanelDraw : MonoBehaviour
 {
     //Magic
-     public GameObject boom;
+    private Vector3 BoltOffset = new Vector3(0.0f, 0.6f, 0.0f);
+    public GameObject boom;
      public GameObject whush;
     public GameObject lightSystem;
     public GameObject AreaofEffect;
@@ -22,6 +23,8 @@ public class PanelDraw : MonoBehaviour
     //The Panel that we will draw on
     public RectTransform UIPanel;
     public Canvas canvas;
+
+    public GameObject CircleThingy;
 
     //Particles
     public ParticleSystem magic;
@@ -266,15 +269,21 @@ public class PanelDraw : MonoBehaviour
 
         if (hit.collider != null)
         {
+            GameObject[] OurCircle = GameObject.FindGameObjectsWithTag("CirlceThingy");
+            foreach (GameObject TheCircle in OurCircle)
+            {
+                TheCircle.GetComponent<SpriteRenderer>().enabled = true;
+            }
+
             whush.GetComponent<PlayerBolt>().lockedTarget = hit.collider.gameObject;
             Debug.Log("Target Position: " + hit.collider.gameObject.transform.position);
             releaseSound.Play();
 
-            Instantiate(whush, player.transform.position, Quaternion.identity);
+            Instantiate(whush, player.transform.position + BoltOffset, Quaternion.identity);
         }
         else
         {
-            Debug.Log("You fucked up,please try again");
+            Debug.Log("I fucked up,please try again");
         }
         
 
