@@ -95,6 +95,7 @@ public class PanelDraw : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 virtualKeyPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y);
+                Debug.Log(virtualKeyPosition);
             }
         }
 
@@ -103,9 +104,6 @@ public class PanelDraw : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-               
-                
-
 
                 if (recognized)
                 {
@@ -334,6 +332,8 @@ public class PanelDraw : MonoBehaviour
         // activate ane set up the draw area
         UIPanel.gameObject.SetActive(true);
         drawArea = new Rect(UIPanel.rect.xMin, UIPanel.rect.yMax, UIPanel.rect.width  * canvas.scaleFactor, UIPanel.rect.height * canvas.scaleFactor);
+      //    drawArea = new Rect(0, 0, Screen.width - 2*Screen.width / 3, Screen.height- Screen.height / 3);
+        //drawArea = new Rect(UIPanel.anchoredPosition.x, UIPanel.anchoredPosition.y, UIPanel.sizeDelta.x, UIPanel.sizeDelta.y);
 
 
     }

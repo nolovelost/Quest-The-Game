@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ScrollDB
   - Enemy
+  - CirlceThingy
   layers:
   - Default
   - TransparentFX
@@ -40,12 +41,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3375799687
+    locked: 0
+  - name: Active Background
+    uniqueID: 2587012817
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Magic
-    uniqueID: 3352851191
-    locked: 0
   - name: UI
     uniqueID: 2735608905
+    locked: 0
+  - name: Magic
+    uniqueID: 3352851191
     locked: 0
