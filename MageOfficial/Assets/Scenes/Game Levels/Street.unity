@@ -946,6 +946,18 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224266667151228248, guid: 4a94bf519398de249a3e3fd33514e6c9,
     type: 2}
   m_PrefabInternal: {fileID: 547878174}
+--- !u!114 &547878176 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114136957451128366, guid: 4a94bf519398de249a3e3fd33514e6c9,
+    type: 2}
+  m_PrefabInternal: {fileID: 547878174}
+  m_Script: {fileID: 11500000, guid: 81c0c4a5df6e8e44dbf0afa4eaf458f0, type: 3}
+--- !u!114 &547878177 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114050704743870146, guid: 4a94bf519398de249a3e3fd33514e6c9,
+    type: 2}
+  m_PrefabInternal: {fileID: 547878174}
+  m_Script: {fileID: 11500000, guid: 81c0c4a5df6e8e44dbf0afa4eaf458f0, type: 3}
 --- !u!1 &552849576
 GameObject:
   m_ObjectHideFlags: 0
@@ -5017,6 +5029,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 114820706383803612, guid: 411ea2ac1b53f8249b19ddbcca1038be,
+        type: 2}
+      propertyPath: HealthScript
+      value: 
+      objectReference: {fileID: 547878177}
+    - target: {fileID: 114714041951626702, guid: 411ea2ac1b53f8249b19ddbcca1038be,
+        type: 2}
+      propertyPath: ManaScript
+      value: 
+      objectReference: {fileID: 547878176}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 411ea2ac1b53f8249b19ddbcca1038be, type: 2}
   m_IsPrefabParent: 0

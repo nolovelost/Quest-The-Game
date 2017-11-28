@@ -674,6 +674,18 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a94bf519398de249a3e3fd33514e6c9, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &214609886 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114136957451128366, guid: 4a94bf519398de249a3e3fd33514e6c9,
+    type: 2}
+  m_PrefabInternal: {fileID: 214609885}
+  m_Script: {fileID: 11500000, guid: 81c0c4a5df6e8e44dbf0afa4eaf458f0, type: 3}
+--- !u!114 &214609887 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114050704743870146, guid: 4a94bf519398de249a3e3fd33514e6c9,
+    type: 2}
+  m_PrefabInternal: {fileID: 214609885}
+  m_Script: {fileID: 11500000, guid: 81c0c4a5df6e8e44dbf0afa4eaf458f0, type: 3}
 --- !u!4 &257764782 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4429260790100304, guid: 8c21f5802ce716441b4a2eff380f4435,
@@ -772,6 +784,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 114820706383803612, guid: 411ea2ac1b53f8249b19ddbcca1038be,
+        type: 2}
+      propertyPath: HealthScript
+      value: 
+      objectReference: {fileID: 214609887}
+    - target: {fileID: 114714041951626702, guid: 411ea2ac1b53f8249b19ddbcca1038be,
+        type: 2}
+      propertyPath: ManaScript
+      value: 
+      objectReference: {fileID: 214609886}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 411ea2ac1b53f8249b19ddbcca1038be, type: 2}
   m_IsPrefabParent: 0
