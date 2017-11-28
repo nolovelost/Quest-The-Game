@@ -24,6 +24,9 @@ public class InventorySys : MonoBehaviour
 
     private bool ToggleInventory;
 
+    public RadialPlayerHealth HealthScript;
+    public RadialPlayerHealth ManaScript;
+
     // Use this for initialization
     void Start ()
     {
@@ -155,6 +158,18 @@ public class InventorySys : MonoBehaviour
         // PUT POTION USE LOGIC HERE
         // ...
 
+        if (mPotion.PotionEffect == Potion.Element.Health)
+        {
+            HealthScript.currentHealth += (int)mPotion.PotionPower;
+            if (HealthScript.currentHealth > 100)
+                HealthScript.currentHealth = 100;
+        }
+        if (mPotion.PotionEffect == Potion.Element.Mana)
+        {
+            ManaScript.currentHealth += (int)mPotion.PotionPower;
+            if (ManaScript.currentHealth > 100)
+                ManaScript.currentHealth = 100;
+        }
     }
 
 }

@@ -310,6 +310,8 @@ MonoBehaviour:
   mPotion: {fileID: 114023637640449808}
   WidthOffset: 300
   HeightOffset: 0
+  HealthScript: {fileID: 0}
+  ManaScript: {fileID: 0}
 --- !u!114 &114714041951626702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -325,6 +327,8 @@ MonoBehaviour:
   mPotion: {fileID: 114905722432204614}
   WidthOffset: 150
   HeightOffset: 0
+  HealthScript: {fileID: 0}
+  ManaScript: {fileID: 0}
 --- !u!114 &114819978136380326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -358,6 +362,8 @@ MonoBehaviour:
   mPotion: {fileID: 114819978136380326}
   WidthOffset: 0
   HeightOffset: 0
+  HealthScript: {fileID: 0}
+  ManaScript: {fileID: 0}
 --- !u!114 &114905722432204614
 MonoBehaviour:
   m_ObjectHideFlags: 1
