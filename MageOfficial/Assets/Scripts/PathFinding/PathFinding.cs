@@ -38,79 +38,142 @@ public class PathFinding : MonoBehaviour {
             ALGORITHM START 
              */
 
-            List<Node> openSet = new List<Node>();
-            //no order no duplication high preformance data 
+            Heap<Node> openSet = new Heap<Node>(grid.MaxSize);            //no order no duplication high preformance data 
             HashSet<Node> closedSet = new HashSet<Node>();
             openSet.Add(startNode);
             //while open not empty
             while (openSet.Count > 0)
             {   //first element
-                Node currentNode = openSet[0];
-                for (int i = 1; i < openSet.Count; i++)
-                {
-                    //find the one with the smallest f cost, or if same the one with smaller h cost
-                    if (openSet[i].FCost() < currentNode.FCost() || openSet[i].FCost() == currentNode.FCost() && openSet[i].hCost < currentNode.hCost)
-                    {
-                        currentNode = openSet[i];
-                    }
-                }
-                //processed so move the node
-                openSet.Remove(currentNode);
+                Node currentNode = openSet.RemoveFirst();
                 closedSet.Add(currentNode);
 
-                //have we found a path ?
                 if (currentNode == targetNode)
                 {
-                    //retrace using parents
-                    //RetracePath(startNode, targetNode);
+                    RetracePath(startNode, targetNode);
                     pathFound = true;
                     break;
                 }
-                //if not try the neighbous
+
                 foreach (Node neighbour in grid.GetNeighbours(currentNode))
-                {   //is walkable and not in closed set
+                {
                     if (!neighbour.walkable || closedSet.Contains(neighbour))
                     {
                         continue;
                     }
-                    //check is there is a new better path, or neighbour is not in open list
-                    int newMoveentCostToNeighbour = currentNode.gCost + GetDistance(currentNode, neighbour);
-                    if (newMoveentCostToNeighbour < neighbour.gCost || !openSet.Contains(neighbour))
+
+                    int newMovementCostToNeighbour = currentNode.gCost + GetDistance(currentNode, neighbour);
+                    if (newMovementCostToNeighbour < neighbour.gCost || !openSet.Contains(neighbour))
                     {
-                        //set new costs
-                        neighbour.gCost = newMoveentCostToNeighbour;
+                        neighbour.gCost = newMovementCostToNeighbour;
                         neighbour.hCost = GetDistance(neighbour, targetNode);
-                        //set parent
                         neighbour.parent = currentNode;
 
-                        //check open set, if not in it add it
                         if (!openSet.Contains(neighbour))
-                        {
                             openSet.Add(neighbour);
-                        }
-                        //else update it
-                        /*
                         else
                         {
                             openSet.UpdateItem(neighbour);
-                        }*/
+                        }
+                    }
                     }
                 }
+            }
+            yield return null;
+            if (pathFound)
+            {
+                waypoints = RetracePath(startNode, targetNode);
+                //  manager.FinishedProcessingEnemyPath(waypoints, pathFound);
+            }
 
+            
+        manager.FinishedProcessingPath(waypoints, pathFound);
+    }
+    /*
+     
+         TRY DUPLICATING
+         
+         */
+    public void StartFindEnemyPath(Vector3 startPos, Vector3 targetPos)
+    {
+        StartCoroutine(FindEnemyPath(startPos, targetPos));
+    }
+
+    IEnumerator FindEnemyPath(Vector3 startPosition, Vector3 targetPosition)
+    {
+        //for the manager
+        Vector3[] waypoints = new Vector3[0];
+        bool pathFound = false;
+        //get the start and end path
+        Node startNode = grid.NodeFromWorldPosition(startPosition);
+        Node targetNode = grid.NodeFromWorldPosition(targetPosition);
+        //OPTIMIZATION ONLY RUN WHEN BOTH WALKABLE
+        if (startNode.walkable && targetNode.walkable)
+        {
+            Heap<Node> openSet = new Heap<Node>(grid.MaxSize);
+            HashSet<Node> closedSet = new HashSet<Node>();
+            openSet.Add(startNode);
+
+
+            /*
+            ALGORITHM START 
+             */
+
+           
+            //no order no duplication high preformance data 
+            
+            //while open not empty
+            while (openSet.Count > 0)
+            {   //first element
+                Node currentNode = openSet.RemoveFirst();
+                closedSet.Add(currentNode);
+
+                if (currentNode == targetNode)
+                {
+                  
+                  
+                    pathFound = true;
+                    break;
+                }
+
+                foreach (Node neighbour in grid.GetNeighbours(currentNode))
+                {
+                    if (!neighbour.walkable || closedSet.Contains(neighbour))
+                    {
+                        continue;
+                    }
+
+                    int newMovementCostToNeighbour = currentNode.gCost + GetDistance(currentNode, neighbour);
+                    if (newMovementCostToNeighbour < neighbour.gCost || !openSet.Contains(neighbour))
+                    {
+                        neighbour.gCost = newMovementCostToNeighbour;
+                        neighbour.hCost = GetDistance(neighbour, targetNode);
+                        neighbour.parent = currentNode;
+
+                        if (!openSet.Contains(neighbour))
+                            openSet.Add(neighbour);
+                        else
+                            openSet.UpdateItem(neighbour);
+                    }
+                }
             }
         }
         yield return null;
         if (pathFound)
         {
-           waypoints= RetracePath(startNode, targetNode);
-
+            waypoints = RetracePath(startNode, targetNode);
         }
-        manager.FinishedProcessingPath(waypoints, pathFound);
-       // manager.FinishedProcessingEnemyPath(waypoints, pathFound);
-
+        manager.FinishedProcessingEnemyPath(waypoints, pathFound);
     }
+    /*
 
-   Vector3[]  RetracePath(Node startNode, Node endNode)
+
+
+    DUPLICATION END
+
+
+    */
+
+    Vector3[]  RetracePath(Node startNode, Node endNode)
     {
         //the nodes making the path
         List<Node> path = new List<Node>();

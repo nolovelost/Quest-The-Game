@@ -113,6 +113,7 @@
      <Compile Include="Assets\Scripts\LoadingScreen\TranslateSmoke.cs" />
      <Compile Include="Assets\Scripts\PathFinding\Enemy_movement.cs" />
      <Compile Include="Assets\Scripts\PathFinding\Grid.cs" />
+     <Compile Include="Assets\Scripts\PathFinding\Heap.cs" />
      <Compile Include="Assets\Scripts\PathFinding\Node.cs" />
      <Compile Include="Assets\Scripts\PathFinding\PathFinding.cs" />
      <Compile Include="Assets\Scripts\PathFinding\PathRequester.cs" />

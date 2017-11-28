@@ -14,6 +14,8 @@ public class PathRequester : MonoBehaviour {
     static PathRequester instance;
     //to get the actual pathfinding
       PathFinding pathfinder;
+    //for enemy
+    PathFinding enemyPathfinder;
     //check flag for queue1
     bool isProcessingPath;
     //for enemy
@@ -23,6 +25,7 @@ public class PathRequester : MonoBehaviour {
     {
         instance = this;
         pathfinder = GetComponent<PathFinding>();
+        enemyPathfinder = GetComponent<PathFinding>();
     }
 
     public static void RequestPath(Vector3 start, Vector3 end, Action<Vector3[], bool> callback)
@@ -69,7 +72,7 @@ public class PathRequester : MonoBehaviour {
         {
             currentEnemyPathRequest = enemyPathRequestQueue.Dequeue();
             isProcessingEnemyPath = true;
-            pathfinder.StartFindPath(currentEnemyPathRequest.pathStart, currentEnemyPathRequest.pathEnd);
+            enemyPathfinder.StartFindEnemyPath(currentEnemyPathRequest.pathStart, currentEnemyPathRequest.pathEnd);
         }
     }
 
