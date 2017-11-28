@@ -95,7 +95,7 @@ public class PanelDraw : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 virtualKeyPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y);
-                Debug.Log(virtualKeyPosition);
+               // Debug.Log(virtualKeyPosition);
             }
         }
 

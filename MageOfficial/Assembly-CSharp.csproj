@@ -103,6 +103,9 @@
      <Compile Include="Assets\Scripts\Catmul.cs" />
      <Compile Include="Assets\Scripts\Enemies\ElementalAttack.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Turn.cs" />
+     <Compile Include="Assets\Scripts\Interactibles\DisableOnClick.cs" />
+     <Compile Include="Assets\Scripts\Interactibles\PickUp.cs" />
      <Compile Include="Assets\Scripts\InventorySystem\Inventory.cs" />
      <Compile Include="Assets\Scripts\InventorySystem\Scroll.cs" />
      <Compile Include="Assets\Scripts\InventorySystem\ScrollDatabase.cs" />
