@@ -107,6 +107,9 @@
      <Compile Include="Assets\Scripts\Interactibles\DisableOnClick.cs" />
      <Compile Include="Assets\Scripts\Interactibles\PickUp.cs" />
      <Compile Include="Assets\Scripts\InventorySystem\Inventory.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\InventoryV2\InventorySys.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\InventoryV2\Potion.cs" />
+     <Compile Include="Assets\Scripts\InventorySystem\InventoryV2\PotionDB.cs" />
      <Compile Include="Assets\Scripts\InventorySystem\Scroll.cs" />
      <Compile Include="Assets\Scripts\InventorySystem\ScrollDatabase.cs" />
      <Compile Include="Assets\Scripts\LoadingScreen\RotateWheel.cs" />
