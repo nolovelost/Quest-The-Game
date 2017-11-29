@@ -1,4 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Game Levels/Underground_1.unity
+- path: //StuHome/HomeDrive0$/1605510/Desktop/MageGit-657aeff13aac636aebfae3e59c4c19e3063ed191/MageOfficial/Assets/Scenes/Game
+    Levels/Underground_1.unity
   isLoaded: 1
   isActive: 1
