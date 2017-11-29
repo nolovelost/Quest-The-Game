@@ -117,7 +117,8 @@ public class Enemy_movement : MonoBehaviour
         }
         yield return new WaitForSeconds(lag);
         PathRequester.RequestPath(this.transform.position, offsetTarget, OnPathFound);
-       yield return null;
+        //RequestPath(this.transform.position, offsetTarget, OnPathFound);
+        yield return null;
         recalculate = false;
     }
     
