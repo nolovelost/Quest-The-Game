@@ -9,10 +9,14 @@ public class ElementalAttack : MonoBehaviour {
     public GameObject whush;
     public AudioSource conjure;
 
-    
+    // Use this for initialization
+    void Start () {
+		
+	}
     IEnumerator Go()
     {
         Fire();
+       // heat += 5f;
         ready = false;
         yield return new WaitForSeconds(fireRate);
         ready = true;
@@ -34,4 +38,7 @@ public class ElementalAttack : MonoBehaviour {
         
     }
 
+    
+
+    
 }

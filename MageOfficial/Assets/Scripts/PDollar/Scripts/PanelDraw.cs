@@ -15,7 +15,6 @@ public class PanelDraw : MonoBehaviour
      public GameObject whush;
     public GameObject lightSystem;
     public GameObject AreaofEffect;
-    public GameObject combo;
     //audio
     public AudioSource drawSound;
     public AudioSource releaseSound;
@@ -96,13 +95,12 @@ public class PanelDraw : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 virtualKeyPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y);
-               
+               // Debug.Log(virtualKeyPosition);
             }
         }
 
         if (drawArea.Contains(virtualKeyPosition))
         {
-            Debug.Log(virtualKeyPosition);
 
             if (Input.GetMouseButtonDown(0))
             {
@@ -159,7 +157,7 @@ public class PanelDraw : MonoBehaviour
     
     void OnGUI()
     {
-       
+       // GUI.backgroundColor = Color.red;
         GUI.Box(drawArea, "Draw Area");
     }
 
@@ -202,7 +200,6 @@ public class PanelDraw : MonoBehaviour
 
             case "com":
                 Debug.Log("/////////////////////////////////////SWTICHT COMBO");
-                StartCoroutine("ComboAttack");
                 break;
 
             default:
@@ -265,7 +262,7 @@ public class PanelDraw : MonoBehaviour
         targetPos.z = 0;
         Vector3 screenPos = Camera.main.ScreenToWorldPoint(targetPos);
 
-       
+        //RaycastHit2D hit = Physics2D.Raycast(Camera.main.transform.position, screenPos - Camera.main.transform.position, 20,enemyRaycast);
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,float.MaxValue,enemyRaycast);
 
         if (hit.collider != null)
@@ -287,46 +284,6 @@ public class PanelDraw : MonoBehaviour
             Debug.Log("I fucked up,please try again");
         }
         
-
-    }
-
-    IEnumerator ComboAttack()
-    {
-        do
-        {
-            Debug.Log("waiting for combo");
-            yield return null;
-        } while (!Input.GetMouseButtonDown(0));
-        /*
-        Vector3 mousePos = Input.mousePosition;
-        mousePos.z = 10;
-        */
-        Vector3 targetPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
-        targetPos = Camera.main.ScreenToWorldPoint(targetPos);
-        targetPos.z = 0;
-        Vector3 screenPos = Camera.main.ScreenToWorldPoint(targetPos);
-
-        //RaycastHit2D hit = Physics2D.Raycast(Camera.main.transform.position, screenPos - Camera.main.transform.position, 20,enemyRaycast);
-        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, float.MaxValue, enemyRaycast);
-
-        if (hit.collider != null)
-        {
-            GameObject[] OurCircle = GameObject.FindGameObjectsWithTag("CirlceThingy");
-            foreach (GameObject TheCircle in OurCircle)
-            {
-                TheCircle.GetComponent<SpriteRenderer>().enabled = true;
-            }
-
-            combo.GetComponent<PlayerBolt>().lockedTarget = hit.collider.gameObject;
-            Debug.Log("Target Position: " + hit.collider.gameObject.transform.position);
-            releaseSound.Play();
-
-            Instantiate(combo, player.transform.position + BoltOffset, Quaternion.identity);
-        }
-        else
-        {
-            Debug.Log("I fucked up,please try again");
-        }
 
     }
     IEnumerator AoE()
@@ -374,11 +331,8 @@ public class PanelDraw : MonoBehaviour
        
         // activate ane set up the draw area
         UIPanel.gameObject.SetActive(true);
-        Debug.Log("one " + UIPanel.rect.xMin + "two " + UIPanel.rect.yMax + "three " + UIPanel.rect.width + "four " + UIPanel.rect.height);
-        drawArea = new Rect(0, 0, Screen.width -  2.2f*Screen.width / 4, Screen.height);
-       // drawArea = new Rect(UIPanel.rect.xMin, UIPanel.rect.yMax, UIPanel.rect.width  * canvas.scaleFactor, UIPanel.rect.height * canvas.scaleFactor);
-     //   drawArea = new Rect(UIPanel.anchoredPosition.x, UIPanel.anchoredPosition.y, UIPanel.sizeDelta.x, UIPanel.sizeDelta.y);
-        //    drawArea = new Rect(0, 0, Screen.width - 2*Screen.width / 3, Screen.height- Screen.height / 3);
+        drawArea = new Rect(UIPanel.rect.xMin, UIPanel.rect.yMax, UIPanel.rect.width  * canvas.scaleFactor, UIPanel.rect.height * canvas.scaleFactor);
+      //    drawArea = new Rect(0, 0, Screen.width - 2*Screen.width / 3, Screen.height- Screen.height / 3);
         //drawArea = new Rect(UIPanel.anchoredPosition.x, UIPanel.anchoredPosition.y, UIPanel.sizeDelta.x, UIPanel.sizeDelta.y);
 
 

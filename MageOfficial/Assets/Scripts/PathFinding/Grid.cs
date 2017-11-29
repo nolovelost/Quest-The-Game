@@ -16,14 +16,7 @@ public class Grid : MonoBehaviour {
         int gridSizeY;
 
     public List<Node> path;
-    public int MaxSize
-    {
-        get
-        {
-            return gridSizeX * gridSizeY;
-        }
-    }
-    
+    /*
    void OnDrawGizmos()
     {   Node playerNode = NodeFromWorldPosition(player.position);
         Gizmos.DrawWireCube(transform.position, new Vector3(gridSize.x, 1, gridSize.y));
@@ -55,9 +48,9 @@ public class Grid : MonoBehaviour {
            
         }
     }
-    
-    // Use this for initialization
-    void Awake () {
+    */
+	// Use this for initialization
+	void Awake () {
         nodeDiameter = nodeRadius * 2;
         //so we dont get halves
         gridSizeX = Mathf.RoundToInt(gridSize.x / nodeDiameter);
