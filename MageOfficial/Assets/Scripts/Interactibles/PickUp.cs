@@ -12,6 +12,8 @@ public class PickUp : MonoBehaviour {
     public GameObject player;
     public GameObject Enemies;
     public ParticleSystem isInteractible;
+    public AudioSource appearEnemy;
+    public AudioSource appearPage;
     float isCloseEnough;
     // Use this for initialization
     void Start () {
@@ -42,12 +44,14 @@ public class PickUp : MonoBehaviour {
 if (hit.collider.tag == "pick" && isCloseEnough <= 0.8f)
         {
             page.gameObject.SetActive(true);
-            Debug.Log(hit.collider.gameObject.name);
+                appearPage.Play();
+                Debug.Log(hit.collider.gameObject.name);
             this.gameObject.SetActive(false);
             //so that it can be used for the other one as well
             if (Enemies != null)
             {
                 Enemies.gameObject.SetActive(true);
+                    appearEnemy.Play();
             }
         }
         
