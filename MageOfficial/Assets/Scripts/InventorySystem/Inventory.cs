@@ -54,15 +54,18 @@ public class Inventory : MonoBehaviour
         Count = mInventory.Count;
 
         float SlotLerpedPosition = startVal;
+
+        
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetButtonDown("ToggleInventory"))
-        {
-            ToggleInventory = !ToggleInventory;
-        }
+        ToggleInventory = true;
+        //if (Input.GetButtonDown("ToggleInventory"))
+        //{
+        //ToggleInventory = !ToggleInventory;
+        //}
 
         // Never show tooltip outside of inventory screen
         if (ToggleInventory == false)

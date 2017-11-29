@@ -45,6 +45,7 @@ public class Enemy : MonoBehaviour {
 
         if (currenthealth <= 0)
         {
+            Debug.Log("Die");
             animationControl.SetTrigger("Die");
             heart.active = false;
             Destroy(this.gameObject,0.8f);

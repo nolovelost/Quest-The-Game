@@ -96,7 +96,8 @@ public class Enemy_movement : MonoBehaviour
             print("Destination2");
             yield return null;
         }
-        
+       
+
     }
 
     IEnumerator  Chase()
@@ -115,9 +116,13 @@ public class Enemy_movement : MonoBehaviour
             offsetTarget.x -= positionOffset;
             offsetTarget.y += Random.Range(-0.1f, 0.1f);
         }
+        isMoving = false;
         yield return new WaitForSeconds(lag);
+        isMoving = true;
+
         PathRequester.RequestPath(this.transform.position, offsetTarget, OnPathFound);
-       yield return null;
+        //RequestPath(this.transform.position, offsetTarget, OnPathFound);
+        yield return null;
         recalculate = false;
     }
     
@@ -134,6 +139,13 @@ public class Enemy_movement : MonoBehaviour
     }
     void Update()
     {
+
+        //check for death
+        if (GetComponent<Enemy>().currenthealth <= 0)
+        {
+            GetComponent<Animator>().SetTrigger("Die");
+            StopCoroutine("FollowPath");
+        }
         //check attack distance
       //  Debug.Log("distance: " + Mathf.Abs(this.transform.position.x - target.transform.position.x));
         if (Mathf.Abs(this.transform.position.x - target.transform.position.x) <= attackRange)
@@ -165,6 +177,7 @@ public class Enemy_movement : MonoBehaviour
 
         if (recalculate )
         {
+            isMoving = false;
             StartCoroutine("Chase");
         }
                     

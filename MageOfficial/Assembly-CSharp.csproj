@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Images\UI\EnemyTarget\TargetterScript.cs" />
      <Compile Include="Assets\LightPulse.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
@@ -102,6 +103,9 @@
      <Compile Include="Assets\Scripts\Catmul.cs" />
      <Compile Include="Assets\Scripts\Enemies\ElementalAttack.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Turn.cs" />
+     <Compile Include="Assets\Scripts\Interactibles\DisableOnClick.cs" />
+     <Compile Include="Assets\Scripts\Interactibles\PickUp.cs" />
      <Compile Include="Assets\Scripts\InventorySystem\Inventory.cs" />
      <Compile Include="Assets\Scripts\InventorySystem\Scroll.cs" />
      <Compile Include="Assets\Scripts\InventorySystem\ScrollDatabase.cs" />
@@ -109,6 +113,7 @@
      <Compile Include="Assets\Scripts\LoadingScreen\TranslateSmoke.cs" />
      <Compile Include="Assets\Scripts\PathFinding\Enemy_movement.cs" />
      <Compile Include="Assets\Scripts\PathFinding\Grid.cs" />
+     <Compile Include="Assets\Scripts\PathFinding\Heap.cs" />
      <Compile Include="Assets\Scripts\PathFinding\Node.cs" />
      <Compile Include="Assets\Scripts\PathFinding\PathFinding.cs" />
      <Compile Include="Assets\Scripts\PathFinding\PathRequester.cs" />

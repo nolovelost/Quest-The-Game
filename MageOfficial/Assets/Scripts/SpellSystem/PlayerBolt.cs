@@ -9,6 +9,7 @@ public class PlayerBolt : MonoBehaviour {
     private bool isTargetAcquired;
     public int damage = 15;
     bool dealtDamage = false;
+    Vector3 TargetOffset = new Vector3(0.0f, 0.3f, 0.0f);
 
     bool targetReached = false;
     public float speed = 1.0f;
@@ -43,6 +44,14 @@ public class PlayerBolt : MonoBehaviour {
                 dealtDamage = true;
            Animator   switcher =  this.transform.GetComponent<Animator>();
                 switcher.SetTrigger("toHit");
+
+                GameObject[] OurCircle = GameObject.FindGameObjectsWithTag("CirlceThingy");
+                foreach (GameObject TheCircle in OurCircle)
+                {
+                    // finds all objects w/ tah cirlce thingy... and disables the sprite renderer
+                    TheCircle.GetComponent<SpriteRenderer>().enabled = false;
+                }
+
                 DestroyObject(this.gameObject,0.3f);
             }
         }
@@ -61,7 +70,7 @@ public class PlayerBolt : MonoBehaviour {
         {
             isTargetAcquired = true;
 
-            HomingDirection = lockedTarget.GetComponent<Transform>().position - transform.position;
+            HomingDirection = (lockedTarget.GetComponent<Transform>().position + TargetOffset) - transform.position;
         }
     }
     void OnTriggerEnter2D(Collider2D other)
